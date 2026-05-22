@@ -1,0 +1,101 @@
+$schema: https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+version: 4
+final_space: true
+console_title_template: '{{if .Root}}[root] {{end}}{{.Shell}} in <{{.Folder}}>'
+blocks:
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - background: transparent
+        foreground: p:white
+        style: plain
+        template: ┌
+        type: text
+      - background: '#464646'
+        foreground: p:white
+        options:
+          windows: 
+          linux: 
+          ubuntu: 
+          macos: 
+        style: plain
+        template: ' {{.Icon}}{{if .WSL}} (WSL){{end}}⠀'
+        type: os
+      - background: p:white
+        foreground: p:black
+        style: plain
+        template: '  {{.Name}}⠀'
+        type: shell
+      - background: '#ffe093'
+        foreground: p:black
+        style: plain
+        template: '  {{.HostName}}{{.UserName}}⠀'
+        type: session
+      - background: '#ffffd6'
+        foreground: p:black
+        options:
+          branch_icon: '  '
+        style: plain
+        template: '{{.HEAD}}⠀'
+        type: git
+  - type: prompt
+    alignment: right
+    segments:
+      - background: transparent
+        foreground: '#b3ffde'
+        options:
+          style: austin
+          threshold: 0
+        style: plain
+        template: '{{.FormattedMs}}'
+        type: executiontime
+      - type: battery
+        style: plain
+        powerline_symbol: 
+        template: ' {{ if not .Error }}{{ .Icon }} {{ .Percentage }}%{{ end }}{{ .Error }} '
+        foreground: '#b3ffde'
+        background: transparent
+      - background: transparent
+        foreground: '#b3ffde'
+        options:
+          time_format: 01/02 03:04pm MST
+        style: plain
+        template: <p:white> · </>{{.CurrentDate | date .Format}}
+        type: time
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - background: transparent
+        foreground: p:white
+        options:
+          folder_icon: 
+          folder_separator_template: <#93d0ff> » </>
+          home_icon: 
+          style: agnoster
+        style: plain
+        template: <p:white>└</><#93d0ff>[</> {{.Path}} <#93d0ff>]</>
+        type: path
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - type: root
+        style: plain
+        powerline_symbol: 
+        template: '  '
+        foreground: '#81ff91'
+        background: transparent
+      - background: transparent
+        foreground: '#81ff91'
+        foreground_templates:
+          - '{{if gt .Code 0}}#ff3030{{end}}'
+        options:
+          always_enabled: true
+        style: plain
+        template: ❯
+        type: status
+palette:
+  white: '#f7f7f7'
+  black: '#111111'

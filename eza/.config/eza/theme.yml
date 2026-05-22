@@ -1,0 +1,501 @@
+colourful: true
+
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║  Extended Campbell Palette — derived from Microsoft Campbell 16    ║
+# ║                                                                    ║
+# ║  Core 16 (unchanged for structural elements):                      ║
+# ║    black   #0c0c0c / #767676    red     #c50f1f / #e74856         ║
+# ║    green   #13a10e / #16c60c    yellow  #f19c00 / #f9f1a5         ║
+# ║    blue    #0037da / #3b78ff    magenta #881798 / #b4009e         ║
+# ║    cyan    #3a96dd / #61d6d6    white   #cccccc / #f2f2f2         ║
+# ║                                                                    ║
+# ║  Extended (interpolated from Campbell hue families):               ║
+# ║    red mid    #d63545    red tint    #f28b95                       ║
+# ║    green mid  #15b40f    green tint  #5ad65a                       ║
+# ║    yellow mid #f4b841    blue mid    #1f5beb                       ║
+# ║    blue tint  #7da6ff    magenta mid #9c2bab                      ║
+# ║    mag tint   #d04ecc    cyan mid    #4db5e5                      ║
+# ║    cyan tint  #93e5e5    gray mid    #4d4d4d   gray lt  #a0a0a0  ║
+# ║                                                                    ║
+# ║  Cross-hue blends (for unique file types):                         ║
+# ║    teal    #2a9d8f    orange  #e8790c    rose    #d64d8a          ║
+# ║    indigo  #5856d6    olive   #8db600    amber   #e6a117          ║
+# ║    slate   #6987c9    peach   #e8916d    violet  #7b68ee          ║
+# ║    aqua    #47c8b0    coral   #f07e6e    sky     #5fb5e8          ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+
+filekinds:
+  normal: {foreground: "#cccccc"}
+  directory: {foreground: "#3b78ff", is_bold: true}
+  symlink: {foreground: "#61d6d6"}
+  pipe: {foreground: "#f19c00"}
+  block_device: {foreground: "#e8790c", is_bold: true}
+  char_device: {foreground: "#e8790c", is_bold: true}
+  socket: {foreground: "#d63545", is_bold: true}
+  special: {foreground: "#f4b841"}
+  executable: {foreground: "#16c60c", is_bold: true}
+  mount_point: {foreground: "#7da6ff", is_bold: true, is_underline: true}
+
+perms:
+  user_read: {foreground: "#f4b841", is_bold: true}
+  user_write: {foreground: "#e74856", is_bold: true}
+  user_execute_file: {foreground: "#16c60c", is_bold: true, is_underline: true}
+  user_execute_other: {foreground: "#16c60c", is_bold: true}
+  group_read: {foreground: "#f19c00"}
+  group_write: {foreground: "#c50f1f"}
+  group_execute: {foreground: "#13a10e"}
+  other_read: {foreground: "#e6a117"}
+  other_write: {foreground: "#d63545"}
+  other_execute: {foreground: "#15b40f"}
+  special_user_file: {foreground: "#9c2bab"}
+  special_other: {foreground: "#881798"}
+  attribute: {foreground: "#a0a0a0"}
+
+size:
+  major: {foreground: "#16c60c", is_bold: true}
+  minor: {foreground: "#13a10e"}
+  number_byte: {foreground: "#5ad65a"}
+  number_kilo: {foreground: "#16c60c", is_bold: true}
+  number_mega: {foreground: "#f4b841", is_bold: true}
+  number_giga: {foreground: "#e74856", is_bold: true}
+  number_huge: {foreground: "#c50f1f", is_bold: true}
+  unit_byte: {foreground: "#5ad65a"}
+  unit_kilo: {foreground: "#13a10e"}
+  unit_mega: {foreground: "#e6a117"}
+  unit_giga: {foreground: "#d63545"}
+  unit_huge: {foreground: "#c50f1f"}
+
+users:
+  user_you: {foreground: "#e6a117", is_bold: true}
+  user_root: {foreground: "#f2f2f2"}
+  user_other: {foreground: "#a0a0a0"}
+  group_yours: {foreground: "#e6a117", is_bold: true}
+  group_other: {foreground: "#a0a0a0"}
+  group_root: {foreground: "#f2f2f2"}
+
+links:
+  normal: {foreground: "#e74856", is_bold: true}
+  multi_link_file: {foreground: "#c50f1f", background: "#f4b841"}
+
+git:
+  new: {foreground: "#16c60c"}
+  modified: {foreground: "#3b78ff"}
+  deleted: {foreground: "#e74856"}
+  renamed: {foreground: "#f4b841"}
+  typechange: {foreground: "#9c2bab"}
+  ignored: {foreground: "#4d4d4d"}
+  conflicted: {foreground: "#c50f1f", is_bold: true}
+
+git_repo:
+  branch_main: {foreground: "#16c60c"}
+  branch_other: {foreground: "#f4b841"}
+  git_clean: {foreground: "#16c60c"}
+  git_dirty: {foreground: "#e6a117"}
+
+security_context:
+  colon: {foreground: "#4d4d4d"}
+  user: {foreground: "#3b78ff"}
+  role: {foreground: "#13a10e"}
+  typ: {foreground: "#f19c00"}
+  range: {foreground: "#61d6d6"}
+
+file_type:
+  image: {foreground: "#d04ecc"}
+  video: {foreground: "#b4009e", is_bold: true}
+  music: {foreground: "#4db5e5"}
+  lossless: {foreground: "#61d6d6", is_bold: true}
+  crypto: {foreground: "#16c60c", is_bold: true}
+  document: {foreground: "#2a9d8f"}
+  compressed: {foreground: "#d63545"}
+  temp: {foreground: "#767676"}
+  compiled: {foreground: "#e8790c"}
+  build: {foreground: "#e6a117", is_bold: true, is_underline: true}
+  source: {foreground: "#f4b841", is_bold: true}
+
+punctuation: {foreground: "#4d4d4d", is_bold: true}
+date: {foreground: "#6987c9"}
+inode: {foreground: "#9c2bab"}
+blocks: {foreground: "#4db5e5"}
+header: {foreground: "#f2f2f2", is_underline: true}
+octal: {foreground: "#7b68ee"}
+flags: {foreground: "#a0a0a0"}
+
+symlink_path: {foreground: "#61d6d6"}
+control_char: {foreground: "#c50f1f"}
+broken_symlink: {foreground: "#e74856", is_underline: true}
+broken_path_overlay: {foreground: "#f28b95", is_underline: true}
+
+filenames:
+  Makefile:            {filename: {foreground: "#e6a117", is_bold: true}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  CMakeLists.txt:      {filename: {foreground: "#e8790c", is_bold: true}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  Dockerfile:          {filename: {foreground: "#4db5e5", is_bold: true}, icon: {glyph: "", style: {foreground: "#4db5e5"}}}
+  docker-compose.yml:  {filename: {foreground: "#4db5e5", is_bold: true}, icon: {glyph: "", style: {foreground: "#4db5e5"}}}
+  docker-compose.yaml: {filename: {foreground: "#4db5e5", is_bold: true}, icon: {glyph: "", style: {foreground: "#4db5e5"}}}
+  Cargo.toml:          {filename: {foreground: "#e8790c"}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  Cargo.lock:          {filename: {foreground: "#e8790c", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  Gemfile:             {filename: {foreground: "#d64d8a"}, icon: {glyph: "", style: {foreground: "#d64d8a"}}}
+  Rakefile:            {filename: {foreground: "#d64d8a"}, icon: {glyph: "", style: {foreground: "#d64d8a"}}}
+  package.json:        {filename: {foreground: "#5ad65a"}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  package-lock.json:   {filename: {foreground: "#5ad65a", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  tsconfig.json:       {filename: {foreground: "#3b78ff"}, icon: {glyph: "", style: {foreground: "#3b78ff"}}}
+  .gitignore:          {filename: {foreground: "#e74856"}, icon: {glyph: "", style: {foreground: "#e74856"}}}
+  .gitmodules:         {filename: {foreground: "#e74856"}, icon: {glyph: "", style: {foreground: "#e74856"}}}
+  .gitattributes:      {filename: {foreground: "#e74856"}, icon: {glyph: "", style: {foreground: "#e74856"}}}
+  .editorconfig:       {filename: {foreground: "#a0a0a0"}, icon: {glyph: "", style: {foreground: "#a0a0a0"}}}
+  .prettierrc:         {filename: {foreground: "#6987c9"}, icon: {glyph: "", style: {foreground: "#6987c9"}}}
+  .eslintrc:           {filename: {foreground: "#7b68ee"}, icon: {glyph: "󰕡", style: {foreground: "#7b68ee"}}}
+  .eslintrc.js:        {filename: {foreground: "#7b68ee"}, icon: {glyph: "󰕡", style: {foreground: "#7b68ee"}}}
+  .eslintrc.json:      {filename: {foreground: "#7b68ee"}, icon: {glyph: "󰕡", style: {foreground: "#7b68ee"}}}
+  LICENSE:             {filename: {foreground: "#f4b841"}, icon: {glyph: "󰒎", style: {foreground: "#f4b841"}}}
+  LICENSE.md:          {filename: {foreground: "#f4b841"}, icon: {glyph: "󰒎", style: {foreground: "#f4b841"}}}
+  README.md:           {filename: {foreground: "#f4b841", is_bold: true}, icon: {glyph: "󰓤", style: {foreground: "#7da6ff"}}}
+  CHANGELOG.md:        {filename: {foreground: "#f4b841"}, icon: {glyph: "󰓤", style: {foreground: "#f4b841"}}}
+  .env:                {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  .env.local:          {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  .env.example:        {filename: {foreground: "#e6a117", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  justfile:            {filename: {foreground: "#e6a117", is_bold: true}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  Vagrantfile:         {filename: {foreground: "#6987c9"}, icon: {glyph: "", style: {foreground: "#6987c9"}}}
+  flake.nix:           {filename: {foreground: "#93e5e5"}, icon: {glyph: "", style: {foreground: "#93e5e5"}}}
+  flake.lock:          {filename: {foreground: "#93e5e5", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#93e5e5"}}}
+  Brewfile:            {filename: {foreground: "#e8916d"}, icon: {glyph: "", style: {foreground: "#e8916d"}}}
+  Procfile:            {filename: {foreground: "#7b68ee"}, icon: {glyph: "", style: {foreground: "#7b68ee"}}}
+  Taskfile.yml:        {filename: {foreground: "#e6a117", is_bold: true}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  # ── Shell & Dotfiles (from yazi) ──────────────────────────
+  .bashrc:                     {filename: {foreground: "#5ad65a"}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  .bash_profile:               {filename: {foreground: "#5ad65a"}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  .zshrc:                      {filename: {foreground: "#5ad65a"}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  .zshenv:                     {filename: {foreground: "#5ad65a"}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  .zprofile:                   {filename: {foreground: "#5ad65a"}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  .vimrc:                      {filename: {foreground: "#13a10e"}, icon: {glyph: "", style: {foreground: "#13a10e"}}}
+  .gvimrc:                     {filename: {foreground: "#13a10e"}, icon: {glyph: "", style: {foreground: "#13a10e"}}}
+  .npmrc:                      {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  .npmignore:                  {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  .nvmrc:                      {filename: {foreground: "#5ad65a"}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  .dockerignore:               {filename: {foreground: "#3a96dd"}, icon: {glyph: "󰡨", style: {foreground: "#3a96dd"}}}
+  .gitconfig:                  {filename: {foreground: "#e74856"}, icon: {glyph: "", style: {foreground: "#e74856"}}}
+  .gitlab-ci.yml:              {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  .eslintignore:               {filename: {foreground: "#5856d6"}, icon: {glyph: "", style: {foreground: "#5856d6"}}}
+  .prettierignore:             {filename: {foreground: "#3b78ff"}, icon: {glyph: "", style: {foreground: "#3b78ff"}}}
+  .pre-commit-config.yaml:     {filename: {foreground: "#e6a117"}, icon: {glyph: "󰛢", style: {foreground: "#e6a117"}}}
+  .mailmap:                    {filename: {foreground: "#e74856"}, icon: {glyph: "󰊢", style: {foreground: "#e74856"}}}
+  .ds_store:                   {filename: {foreground: "#4d4d4d"}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  # ── Language Tooling & Build ──────────────────────────────
+  go.mod:                      {filename: {foreground: "#3a96dd"}, icon: {glyph: "", style: {foreground: "#3a96dd"}}}
+  go.sum:                      {filename: {foreground: "#3a96dd"}, icon: {glyph: "", style: {foreground: "#3a96dd"}}}
+  go.work:                     {filename: {foreground: "#3a96dd"}, icon: {glyph: "", style: {foreground: "#3a96dd"}}}
+  build.gradle:                {filename: {foreground: "#2a9d8f"}, icon: {glyph: "", style: {foreground: "#2a9d8f"}}}
+  settings.gradle:             {filename: {foreground: "#2a9d8f"}, icon: {glyph: "", style: {foreground: "#2a9d8f"}}}
+  pom.xml:                     {filename: {foreground: "#c50f1f"}, icon: {glyph: "", style: {foreground: "#c50f1f"}}}
+  py.typed:                    {filename: {foreground: "#f19c00"}, icon: {glyph: "", style: {foreground: "#f19c00"}}}
+  # ── Container & Infra ─────────────────────────────────────
+  compose.yaml:                {filename: {foreground: "#3a96dd"}, icon: {glyph: "󰡨", style: {foreground: "#3a96dd"}}}
+  compose.yml:                 {filename: {foreground: "#3a96dd"}, icon: {glyph: "󰡨", style: {foreground: "#3a96dd"}}}
+  containerfile:               {filename: {foreground: "#3a96dd"}, icon: {glyph: "󰡨", style: {foreground: "#3a96dd"}}}
+  Jenkinsfile:                 {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  PKGBUILD:                    {filename: {foreground: "#3a96dd"}, icon: {glyph: "", style: {foreground: "#3a96dd"}}}
+  # ── JS/TS Ecosystem ───────────────────────────────────────
+  pnpm-lock.yaml:              {filename: {foreground: "#f19c00", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#f19c00"}}}
+  pnpm-workspace.yaml:         {filename: {foreground: "#f19c00"}, icon: {glyph: "", style: {foreground: "#f19c00"}}}
+  bun.lock:                    {filename: {foreground: "#cccccc", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#cccccc"}}}
+  bun.lockb:                   {filename: {foreground: "#cccccc", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#cccccc"}}}
+  tailwind.config.js:          {filename: {foreground: "#4db5e5"}, icon: {glyph: "󱏿", style: {foreground: "#4db5e5"}}}
+  tailwind.config.ts:          {filename: {foreground: "#4db5e5"}, icon: {glyph: "󱏿", style: {foreground: "#4db5e5"}}}
+  tailwind.config.mjs:         {filename: {foreground: "#4db5e5"}, icon: {glyph: "󱏿", style: {foreground: "#4db5e5"}}}
+  vite.config.js:              {filename: {foreground: "#f19c00"}, icon: {glyph: "", style: {foreground: "#f19c00"}}}
+  vite.config.ts:              {filename: {foreground: "#f19c00"}, icon: {glyph: "", style: {foreground: "#f19c00"}}}
+  vite.config.mjs:             {filename: {foreground: "#f19c00"}, icon: {glyph: "", style: {foreground: "#f19c00"}}}
+  next.config.js:              {filename: {foreground: "#f2f2f2"}, icon: {glyph: "", style: {foreground: "#f2f2f2"}}}
+  next.config.ts:              {filename: {foreground: "#f2f2f2"}, icon: {glyph: "", style: {foreground: "#f2f2f2"}}}
+  svelte.config.js:            {filename: {foreground: "#e8790c"}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  eslint.config.js:            {filename: {foreground: "#5856d6"}, icon: {glyph: "", style: {foreground: "#5856d6"}}}
+  eslint.config.ts:            {filename: {foreground: "#5856d6"}, icon: {glyph: "", style: {foreground: "#5856d6"}}}
+  commitlint.config.js:        {filename: {foreground: "#2a9d8f"}, icon: {glyph: "󰜘", style: {foreground: "#2a9d8f"}}}
+  commitlint.config.ts:        {filename: {foreground: "#2a9d8f"}, icon: {glyph: "󰜘", style: {foreground: "#2a9d8f"}}}
+  node_modules:                {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  # ── Terminal & Misc ───────────────────────────────────────
+  tmux.conf:                   {filename: {foreground: "#15b40f"}, icon: {glyph: "", style: {foreground: "#15b40f"}}}
+  tmux.conf.local:             {filename: {foreground: "#15b40f"}, icon: {glyph: "", style: {foreground: "#15b40f"}}}
+  robots.txt:                  {filename: {foreground: "#767676"}, icon: {glyph: "󰚩", style: {foreground: "#767676"}}}
+  favicon.ico:                 {filename: {foreground: "#f4b841"}, icon: {glyph: "", style: {foreground: "#f4b841"}}}
+  # ── Project Docs ──────────────────────────────────────────
+  unlicense:                   {filename: {foreground: "#f4b841"}, icon: {glyph: "", style: {foreground: "#f4b841"}}}
+  readme:                      {filename: {foreground: "#f2f2f2"}, icon: {glyph: "󰂺", style: {foreground: "#f2f2f2"}}}
+  security:                    {filename: {foreground: "#cccccc"}, icon: {glyph: "󰒃", style: {foreground: "#cccccc"}}}
+  security.md:                 {filename: {foreground: "#cccccc"}, icon: {glyph: "󰒃", style: {foreground: "#cccccc"}}}
+  code_of_conduct:             {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  code_of_conduct.md:          {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  AUTHORS:                     {filename: {foreground: "#7b68ee"}, icon: {glyph: "", style: {foreground: "#7b68ee"}}}
+  AUTHORS.txt:                 {filename: {foreground: "#7b68ee"}, icon: {glyph: "", style: {foreground: "#7b68ee"}}}
+
+extensions:
+  # ── Source Code ──────────────────────────────────────────────
+  py:    {filename: {foreground: "#f4b841", is_bold: true}, icon: {glyph: "", style: {foreground: "#3b78ff"}}}
+  pyi:   {filename: {foreground: "#f4b841"}, icon: {glyph: "", style: {foreground: "#3b78ff"}}}
+  ipynb: {filename: {foreground: "#e8790c"}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  js:    {filename: {foreground: "#f9f1a5", is_bold: true}, icon: {glyph: "", style: {foreground: "#f9f1a5"}}}
+  mjs:   {filename: {foreground: "#f9f1a5"}, icon: {glyph: "", style: {foreground: "#f9f1a5"}}}
+  cjs:   {filename: {foreground: "#f9f1a5"}, icon: {glyph: "", style: {foreground: "#f9f1a5"}}}
+  ts:    {filename: {foreground: "#3b78ff", is_bold: true}, icon: {glyph: "", style: {foreground: "#3b78ff"}}}
+  tsx:   {filename: {foreground: "#1f5beb", is_bold: true}, icon: {glyph: "", style: {foreground: "#1f5beb"}}}
+  jsx:   {filename: {foreground: "#5fb5e8", is_bold: true}, icon: {glyph: "", style: {foreground: "#5fb5e8"}}}
+  go:    {filename: {foreground: "#2a9d8f", is_bold: true}, icon: {glyph: "", style: {foreground: "#47c8b0"}}}
+  rs:    {filename: {foreground: "#e8790c", is_bold: true}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  c:     {filename: {foreground: "#6987c9", is_bold: true}, icon: {glyph: "", style: {foreground: "#6987c9"}}}
+  h:     {filename: {foreground: "#7da6ff"}, icon: {glyph: "", style: {foreground: "#7da6ff"}}}
+  cpp:   {filename: {foreground: "#1f5beb", is_bold: true}, icon: {glyph: "", style: {foreground: "#1f5beb"}}}
+  hpp:   {filename: {foreground: "#7da6ff"}, icon: {glyph: "", style: {foreground: "#7da6ff"}}}
+  cc:    {filename: {foreground: "#1f5beb", is_bold: true}, icon: {glyph: "", style: {foreground: "#1f5beb"}}}
+  hh:    {filename: {foreground: "#7da6ff"}, icon: {glyph: "", style: {foreground: "#7da6ff"}}}
+  java:  {filename: {foreground: "#e8790c", is_bold: true}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  kt:    {filename: {foreground: "#7b68ee", is_bold: true}, icon: {glyph: "", style: {foreground: "#7b68ee"}}}
+  kts:   {filename: {foreground: "#7b68ee"}, icon: {glyph: "", style: {foreground: "#7b68ee"}}}
+  scala: {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  rb:    {filename: {foreground: "#d64d8a", is_bold: true}, icon: {glyph: "", style: {foreground: "#d64d8a"}}}
+  swift: {filename: {foreground: "#f07e6e", is_bold: true}, icon: {glyph: "", style: {foreground: "#f07e6e"}}}
+  cs:    {filename: {foreground: "#9c2bab", is_bold: true}, icon: {glyph: "󰼛", style: {foreground: "#9c2bab"}}}
+  fs:    {filename: {foreground: "#5856d6"}, icon: {glyph: "", style: {foreground: "#5856d6"}}}
+  lua:   {filename: {foreground: "#5856d6", is_bold: true}, icon: {glyph: "", style: {foreground: "#5856d6"}}}
+  zig:   {filename: {foreground: "#e6a117", is_bold: true}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  nim:   {filename: {foreground: "#f9f1a5", is_bold: true}, icon: {glyph: "", style: {foreground: "#f4b841"}}}
+  hs:    {filename: {foreground: "#5856d6"}, icon: {glyph: "", style: {foreground: "#5856d6"}}}
+  ex:    {filename: {foreground: "#7b68ee", is_bold: true}, icon: {glyph: "", style: {foreground: "#7b68ee"}}}
+  exs:   {filename: {foreground: "#7b68ee"}, icon: {glyph: "", style: {foreground: "#7b68ee"}}}
+  erl:   {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  clj:   {filename: {foreground: "#8db600"}, icon: {glyph: "", style: {foreground: "#8db600"}}}
+  dart:  {filename: {foreground: "#47c8b0", is_bold: true}, icon: {glyph: "", style: {foreground: "#47c8b0"}}}
+  r:     {filename: {foreground: "#6987c9"}, icon: {glyph: "󰟔", style: {foreground: "#6987c9"}}}
+  R:     {filename: {foreground: "#6987c9"}, icon: {glyph: "󰟔", style: {foreground: "#6987c9"}}}
+  pl:    {filename: {foreground: "#4db5e5"}, icon: {glyph: "", style: {foreground: "#4db5e5"}}}
+  php:   {filename: {foreground: "#9c2bab", is_bold: true}, icon: {glyph: "", style: {foreground: "#9c2bab"}}}
+  # ── Shell & Scripting ───────────────────────────────────────
+  sh:    {filename: {foreground: "#5ad65a", is_bold: true}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  bash:  {filename: {foreground: "#16c60c", is_bold: true}, icon: {glyph: "", style: {foreground: "#16c60c"}}}
+  zsh:   {filename: {foreground: "#15b40f", is_bold: true}, icon: {glyph: "", style: {foreground: "#15b40f"}}}
+  fish:  {filename: {foreground: "#2a9d8f", is_bold: true}, icon: {glyph: "", style: {foreground: "#2a9d8f"}}}
+  ps1:   {filename: {foreground: "#1f5beb", is_bold: true}, icon: {glyph: "󰨊", style: {foreground: "#1f5beb"}}}
+  psm1:  {filename: {foreground: "#6987c9"}, icon: {glyph: "󰨊", style: {foreground: "#6987c9"}}}
+  psd1:  {filename: {foreground: "#6987c9"}, icon: {glyph: "󰨊", style: {foreground: "#6987c9"}}}
+  bat:   {filename: {foreground: "#13a10e"}, icon: {glyph: "", style: {foreground: "#13a10e"}}}
+  cmd:   {filename: {foreground: "#13a10e"}, icon: {glyph: "", style: {foreground: "#13a10e"}}}
+  vim:   {filename: {foreground: "#8db600", is_bold: true}, icon: {glyph: "", style: {foreground: "#8db600"}}}
+  # ── Web ─────────────────────────────────────────────────────
+  html:  {filename: {foreground: "#e74856", is_bold: true}, icon: {glyph: "", style: {foreground: "#e74856"}}}
+  htm:   {filename: {foreground: "#f28b95"}, icon: {glyph: "", style: {foreground: "#f28b95"}}}
+  css:   {filename: {foreground: "#3b78ff", is_bold: true}, icon: {glyph: "", style: {foreground: "#3b78ff"}}}
+  scss:  {filename: {foreground: "#d64d8a", is_bold: true}, icon: {glyph: "", style: {foreground: "#d64d8a"}}}
+  sass:  {filename: {foreground: "#d64d8a"}, icon: {glyph: "", style: {foreground: "#d64d8a"}}}
+  less:  {filename: {foreground: "#7da6ff"}, icon: {glyph: "", style: {foreground: "#7da6ff"}}}
+  svelte: {filename: {foreground: "#f07e6e", is_bold: true}, icon: {glyph: "", style: {foreground: "#f07e6e"}}}
+  vue:   {filename: {foreground: "#2a9d8f", is_bold: true}, icon: {glyph: "", style: {foreground: "#2a9d8f"}}}
+  astro: {filename: {foreground: "#e8916d"}, icon: {glyph: "", style: {foreground: "#e8916d"}}}
+  wasm:  {filename: {foreground: "#7b68ee", is_bold: true}, icon: {glyph: "", style: {foreground: "#7b68ee"}}}
+  # ── Data & Config ───────────────────────────────────────────
+  json:  {filename: {foreground: "#f4b841"}, icon: {glyph: "", style: {foreground: "#f4b841"}}}
+  jsonc: {filename: {foreground: "#f4b841"}, icon: {glyph: "", style: {foreground: "#f4b841"}}}
+  json5: {filename: {foreground: "#f4b841"}, icon: {glyph: "", style: {foreground: "#f4b841"}}}
+  yaml:  {filename: {foreground: "#93e5e5"}, icon: {glyph: "", style: {foreground: "#93e5e5"}}}
+  yml:   {filename: {foreground: "#93e5e5"}, icon: {glyph: "", style: {foreground: "#93e5e5"}}}
+  toml:  {filename: {foreground: "#61d6d6"}, icon: {glyph: "", style: {foreground: "#61d6d6"}}}
+  xml:   {filename: {foreground: "#e8790c"}, icon: {glyph: "󰗀", style: {foreground: "#e8790c"}}}
+  csv:   {filename: {foreground: "#5ad65a"}, icon: {glyph: "󰘡", style: {foreground: "#5ad65a"}}}
+  tsv:   {filename: {foreground: "#5ad65a"}, icon: {glyph: "󰘡", style: {foreground: "#5ad65a"}}}
+  ini:   {filename: {foreground: "#a0a0a0"}, icon: {glyph: "", style: {foreground: "#a0a0a0"}}}
+  conf:  {filename: {foreground: "#a0a0a0"}, icon: {glyph: "", style: {foreground: "#a0a0a0"}}}
+  cfg:   {filename: {foreground: "#a0a0a0"}, icon: {glyph: "", style: {foreground: "#a0a0a0"}}}
+  env:   {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  properties: {filename: {foreground: "#a0a0a0"}, icon: {glyph: "", style: {foreground: "#a0a0a0"}}}
+  plist: {filename: {foreground: "#9c2bab"}, icon: {glyph: "", style: {foreground: "#9c2bab"}}}
+  nix:   {filename: {foreground: "#93e5e5"}, icon: {glyph: "", style: {foreground: "#93e5e5"}}}
+  dhall: {filename: {foreground: "#61d6d6"}, icon: {glyph: "", style: {foreground: "#61d6d6"}}}
+  tf:    {filename: {foreground: "#5856d6", is_bold: true}, icon: {glyph: "󱁢", style: {foreground: "#5856d6"}}}
+  hcl:   {filename: {foreground: "#5856d6"}, icon: {glyph: "󱁢", style: {foreground: "#5856d6"}}}
+  graphql: {filename: {foreground: "#d64d8a"}, icon: {glyph: "", style: {foreground: "#d64d8a"}}}
+  proto: {filename: {foreground: "#a0a0a0"}, icon: {glyph: "", style: {foreground: "#a0a0a0"}}}
+  sql:   {filename: {foreground: "#5fb5e8"}, icon: {glyph: "", style: {foreground: "#5fb5e8"}}}
+  # ── Documents ───────────────────────────────────────────────
+  md:    {filename: {foreground: "#7da6ff"}, icon: {glyph: "", style: {foreground: "#7da6ff"}}}
+  mdx:   {filename: {foreground: "#7da6ff"}, icon: {glyph: "", style: {foreground: "#7da6ff"}}}
+  txt:   {filename: {foreground: "#a0a0a0"}, icon: {glyph: "", style: {foreground: "#a0a0a0"}}}
+  rst:   {filename: {foreground: "#6987c9"}, icon: {glyph: "", style: {foreground: "#6987c9"}}}
+  org:   {filename: {foreground: "#2a9d8f"}, icon: {glyph: "", style: {foreground: "#2a9d8f"}}}
+  tex:   {filename: {foreground: "#47c8b0", is_bold: true}, icon: {glyph: "", style: {foreground: "#47c8b0"}}}
+  bib:   {filename: {foreground: "#47c8b0"}, icon: {glyph: "", style: {foreground: "#47c8b0"}}}
+  pdf:   {filename: {foreground: "#d63545", is_bold: true}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  doc:   {filename: {foreground: "#1f5beb", is_bold: true}, icon: {glyph: "󰸬", style: {foreground: "#1f5beb"}}}
+  docx:  {filename: {foreground: "#1f5beb", is_bold: true}, icon: {glyph: "󰸬", style: {foreground: "#1f5beb"}}}
+  xls:   {filename: {foreground: "#15b40f", is_bold: true}, icon: {glyph: "󰸛", style: {foreground: "#15b40f"}}}
+  xlsx:  {filename: {foreground: "#15b40f", is_bold: true}, icon: {glyph: "󰸛", style: {foreground: "#15b40f"}}}
+  ppt:   {filename: {foreground: "#e8790c", is_bold: true}, icon: {glyph: "󰸧", style: {foreground: "#e8790c"}}}
+  pptx:  {filename: {foreground: "#e8790c", is_bold: true}, icon: {glyph: "󰸧", style: {foreground: "#e8790c"}}}
+  odt:   {filename: {foreground: "#6987c9"}, icon: {glyph: "󰸬", style: {foreground: "#6987c9"}}}
+  ods:   {filename: {foreground: "#2a9d8f"}, icon: {glyph: "󰸛", style: {foreground: "#2a9d8f"}}}
+  rtf:   {filename: {foreground: "#a0a0a0"}, icon: {glyph: "", style: {foreground: "#a0a0a0"}}}
+  epub:  {filename: {foreground: "#8db600"}, icon: {glyph: "", style: {foreground: "#8db600"}}}
+  # ── Images ──────────────────────────────────────────────────
+  png:   {filename: {foreground: "#d04ecc"}, icon: {glyph: "", style: {foreground: "#d04ecc"}}}
+  jpg:   {filename: {foreground: "#9c2bab"}, icon: {glyph: "", style: {foreground: "#9c2bab"}}}
+  jpeg:  {filename: {foreground: "#9c2bab"}, icon: {glyph: "", style: {foreground: "#9c2bab"}}}
+  gif:   {filename: {foreground: "#d64d8a"}, icon: {glyph: "", style: {foreground: "#d64d8a"}}}
+  bmp:   {filename: {foreground: "#881798"}, icon: {glyph: "", style: {foreground: "#881798"}}}
+  tiff:  {filename: {foreground: "#881798"}, icon: {glyph: "", style: {foreground: "#881798"}}}
+  webp:  {filename: {foreground: "#b4009e"}, icon: {glyph: "", style: {foreground: "#b4009e"}}}
+  svg:   {filename: {foreground: "#f07e6e", is_bold: true}, icon: {glyph: "󰜡", style: {foreground: "#f07e6e"}}}
+  ico:   {filename: {foreground: "#881798"}, icon: {glyph: "", style: {foreground: "#881798"}}}
+  heic:  {filename: {foreground: "#9c2bab"}, icon: {glyph: "", style: {foreground: "#9c2bab"}}}
+  avif:  {filename: {foreground: "#9c2bab"}, icon: {glyph: "", style: {foreground: "#9c2bab"}}}
+  psd:   {filename: {foreground: "#5fb5e8", is_bold: true}, icon: {glyph: "", style: {foreground: "#5fb5e8"}}}
+  ai:    {filename: {foreground: "#e8790c", is_bold: true}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  # ── Video ───────────────────────────────────────────────────
+  mp4:   {filename: {foreground: "#b4009e", is_bold: true}, icon: {glyph: "", style: {foreground: "#b4009e"}}}
+  mkv:   {filename: {foreground: "#d04ecc", is_bold: true}, icon: {glyph: "", style: {foreground: "#d04ecc"}}}
+  avi:   {filename: {foreground: "#9c2bab", is_bold: true}, icon: {glyph: "", style: {foreground: "#9c2bab"}}}
+  mov:   {filename: {foreground: "#b4009e", is_bold: true}, icon: {glyph: "", style: {foreground: "#b4009e"}}}
+  wmv:   {filename: {foreground: "#881798", is_bold: true}, icon: {glyph: "", style: {foreground: "#881798"}}}
+  flv:   {filename: {foreground: "#881798"}, icon: {glyph: "", style: {foreground: "#881798"}}}
+  webm:  {filename: {foreground: "#d04ecc", is_bold: true}, icon: {glyph: "", style: {foreground: "#d04ecc"}}}
+  # ── Audio ───────────────────────────────────────────────────
+  mp3:   {filename: {foreground: "#4db5e5"}, icon: {glyph: "", style: {foreground: "#4db5e5"}}}
+  flac:  {filename: {foreground: "#93e5e5", is_bold: true}, icon: {glyph: "", style: {foreground: "#93e5e5"}}}
+  wav:   {filename: {foreground: "#61d6d6", is_bold: true}, icon: {glyph: "", style: {foreground: "#61d6d6"}}}
+  ogg:   {filename: {foreground: "#5fb5e8"}, icon: {glyph: "", style: {foreground: "#5fb5e8"}}}
+  aac:   {filename: {foreground: "#3a96dd"}, icon: {glyph: "", style: {foreground: "#3a96dd"}}}
+  m4a:   {filename: {foreground: "#3a96dd"}, icon: {glyph: "", style: {foreground: "#3a96dd"}}}
+  opus:  {filename: {foreground: "#47c8b0"}, icon: {glyph: "", style: {foreground: "#47c8b0"}}}
+  wma:   {filename: {foreground: "#3a96dd"}, icon: {glyph: "", style: {foreground: "#3a96dd"}}}
+  mid:   {filename: {foreground: "#93e5e5"}, icon: {glyph: "", style: {foreground: "#93e5e5"}}}
+  midi:  {filename: {foreground: "#93e5e5"}, icon: {glyph: "", style: {foreground: "#93e5e5"}}}
+  # ── Archives & Compressed ───────────────────────────────────
+  zip:   {filename: {foreground: "#e74856", is_bold: true}, icon: {glyph: "", style: {foreground: "#e74856"}}}
+  tar:   {filename: {foreground: "#d63545", is_bold: true}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  gz:    {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  bz2:   {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  xz:    {filename: {foreground: "#c50f1f"}, icon: {glyph: "", style: {foreground: "#c50f1f"}}}
+  zst:   {filename: {foreground: "#c50f1f"}, icon: {glyph: "", style: {foreground: "#c50f1f"}}}
+  lz4:   {filename: {foreground: "#c50f1f"}, icon: {glyph: "", style: {foreground: "#c50f1f"}}}
+  7z:    {filename: {foreground: "#f28b95", is_bold: true}, icon: {glyph: "", style: {foreground: "#f28b95"}}}
+  rar:   {filename: {foreground: "#e74856", is_bold: true}, icon: {glyph: "", style: {foreground: "#e74856"}}}
+  deb:   {filename: {foreground: "#e8916d"}, icon: {glyph: "", style: {foreground: "#e8916d"}}}
+  rpm:   {filename: {foreground: "#e8916d"}, icon: {glyph: "", style: {foreground: "#e8916d"}}}
+  dmg:   {filename: {foreground: "#f07e6e", is_bold: true}, icon: {glyph: "", style: {foreground: "#f07e6e"}}}
+  iso:   {filename: {foreground: "#f07e6e", is_bold: true}, icon: {glyph: "󰟮", style: {foreground: "#f07e6e"}}}
+  # ── Compiled & Binary ───────────────────────────────────────
+  o:     {filename: {foreground: "#4d4d4d"}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  so:    {filename: {foreground: "#e8790c"}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  dylib: {filename: {foreground: "#e8790c"}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  dll:   {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  a:     {filename: {foreground: "#4d4d4d"}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  lib:   {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  class: {filename: {foreground: "#e8790c"}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  pyc:   {filename: {foreground: "#4d4d4d"}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  pyo:   {filename: {foreground: "#4d4d4d"}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  elc:   {filename: {foreground: "#4d4d4d"}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  bin:   {filename: {foreground: "#f19c00", is_bold: true}, icon: {glyph: "", style: {foreground: "#f19c00"}}}
+  exe:   {filename: {foreground: "#5ad65a", is_bold: true}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  app:   {filename: {foreground: "#16c60c", is_bold: true}, icon: {glyph: "", style: {foreground: "#16c60c"}}}
+  msi:   {filename: {foreground: "#7da6ff"}, icon: {glyph: "", style: {foreground: "#7da6ff"}}}
+  # ── Lock & Build ────────────────────────────────────────────
+  lock:  {filename: {foreground: "#4d4d4d", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  # ── Database ────────────────────────────────────────────────
+  db:     {filename: {foreground: "#47c8b0"}, icon: {glyph: "", style: {foreground: "#47c8b0"}}}
+  sqlite: {filename: {foreground: "#5fb5e8"}, icon: {glyph: "", style: {foreground: "#5fb5e8"}}}
+  sqlite3: {filename: {foreground: "#5fb5e8"}, icon: {glyph: "", style: {foreground: "#5fb5e8"}}}
+  # ── Fonts ───────────────────────────────────────────────────
+  ttf:   {filename: {foreground: "#f2f2f2"}, icon: {glyph: "", style: {foreground: "#f2f2f2"}}}
+  otf:   {filename: {foreground: "#cccccc"}, icon: {glyph: "", style: {foreground: "#cccccc"}}}
+  woff:  {filename: {foreground: "#a0a0a0"}, icon: {glyph: "", style: {foreground: "#a0a0a0"}}}
+  woff2: {filename: {foreground: "#a0a0a0"}, icon: {glyph: "", style: {foreground: "#a0a0a0"}}}
+  # ── Security & Crypto ───────────────────────────────────────
+  pem:   {filename: {foreground: "#e6a117", is_bold: true}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  crt:   {filename: {foreground: "#f4b841", is_bold: true}, icon: {glyph: "󰒎", style: {foreground: "#f4b841"}}}
+  key:   {filename: {foreground: "#d63545", is_bold: true}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  pub:   {filename: {foreground: "#5ad65a", is_bold: true}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  sig:   {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  asc:   {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  gpg:   {filename: {foreground: "#f4b841", is_bold: true}, icon: {glyph: "", style: {foreground: "#f4b841"}}}
+  # ── Temporary & Backup ──────────────────────────────────────
+  tmp:   {filename: {foreground: "#4d4d4d", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  temp:  {filename: {foreground: "#4d4d4d", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  bak:   {filename: {foreground: "#767676", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#767676"}}}
+  swp:   {filename: {foreground: "#4d4d4d", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  swo:   {filename: {foreground: "#4d4d4d", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  log:   {filename: {foreground: "#767676"}, icon: {glyph: "", style: {foreground: "#767676"}}}
+  pid:   {filename: {foreground: "#4d4d4d", is_dimmed: true}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  # ── Additional Languages (from yazi) ───────────────────────
+  ada:    {filename: {foreground: "#5fb5e8"}, icon: {glyph: "", style: {foreground: "#5fb5e8"}}}
+  adb:    {filename: {foreground: "#5fb5e8"}, icon: {glyph: "", style: {foreground: "#5fb5e8"}}}
+  asm:    {filename: {foreground: "#2a9d8f"}, icon: {glyph: "", style: {foreground: "#2a9d8f"}}}
+  awk:    {filename: {foreground: "#4d4d4d"}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  coffee: {filename: {foreground: "#f4b841"}, icon: {glyph: "", style: {foreground: "#f4b841"}}}
+  cr:     {filename: {foreground: "#cccccc"}, icon: {glyph: "", style: {foreground: "#cccccc"}}}
+  cxx:    {filename: {foreground: "#6987c9"}, icon: {glyph: "", style: {foreground: "#6987c9"}}}
+  d:      {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  ejs:    {filename: {foreground: "#f4b841"}, icon: {glyph: "", style: {foreground: "#f4b841"}}}
+  elm:    {filename: {foreground: "#6987c9"}, icon: {glyph: "", style: {foreground: "#6987c9"}}}
+  erb:    {filename: {foreground: "#c50f1f"}, icon: {glyph: "", style: {foreground: "#c50f1f"}}}
+  f90:    {filename: {foreground: "#767676"}, icon: {glyph: "󱈚", style: {foreground: "#767676"}}}
+  gleam:  {filename: {foreground: "#f2f2f2"}, icon: {glyph: "", style: {foreground: "#f2f2f2"}}}
+  gradle: {filename: {foreground: "#2a9d8f"}, icon: {glyph: "", style: {foreground: "#2a9d8f"}}}
+  haml:   {filename: {foreground: "#f2f2f2"}, icon: {glyph: "", style: {foreground: "#f2f2f2"}}}
+  hbs:    {filename: {foreground: "#e8790c"}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  jl:     {filename: {foreground: "#a0a0a0"}, icon: {glyph: "", style: {foreground: "#a0a0a0"}}}
+  liquid: {filename: {foreground: "#5ad65a"}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  ml:     {filename: {foreground: "#e8790c"}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  mli:    {filename: {foreground: "#e8790c"}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  mustache: {filename: {foreground: "#e8790c"}, icon: {glyph: "", style: {foreground: "#e8790c"}}}
+  nu:     {filename: {foreground: "#2a9d8f"}, icon: {glyph: "", style: {foreground: "#2a9d8f"}}}
+  odin:   {filename: {foreground: "#3a96dd"}, icon: {glyph: "󰟢", style: {foreground: "#3a96dd"}}}
+  prisma: {filename: {foreground: "#5856d6"}, icon: {glyph: "", style: {foreground: "#5856d6"}}}
+  rlib:   {filename: {foreground: "#e8916d"}, icon: {glyph: "", style: {foreground: "#e8916d"}}}
+  sbt:    {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  slim:   {filename: {foreground: "#d63545"}, icon: {glyph: "", style: {foreground: "#d63545"}}}
+  sol:    {filename: {foreground: "#6987c9"}, icon: {glyph: "", style: {foreground: "#6987c9"}}}
+  styl:   {filename: {foreground: "#5ad65a"}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  twig:   {filename: {foreground: "#5ad65a"}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  v:      {filename: {foreground: "#13a10e"}, icon: {glyph: "󰍛", style: {foreground: "#13a10e"}}}
+  vala:   {filename: {foreground: "#9c2bab"}, icon: {glyph: "", style: {foreground: "#9c2bab"}}}
+  # ── Additional Web & Template ──────────────────────────────
+  applescript: {filename: {foreground: "#767676"}, icon: {glyph: "", style: {foreground: "#767676"}}}
+  cmake:  {filename: {foreground: "#f2f2f2"}, icon: {glyph: "", style: {foreground: "#f2f2f2"}}}
+  feature: {filename: {foreground: "#13a10e"}, icon: {glyph: "", style: {foreground: "#13a10e"}}}
+  rss:    {filename: {foreground: "#f4b841"}, icon: {glyph: "", style: {foreground: "#f4b841"}}}
+  # ── Additional Config & Misc ───────────────────────────────
+  desktop: {filename: {foreground: "#4d4d4d"}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  diff:   {filename: {foreground: "#4d4d4d"}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  gcode:  {filename: {foreground: "#2a9d8f"}, icon: {glyph: "󰐫", style: {foreground: "#2a9d8f"}}}
+  gd:     {filename: {foreground: "#767676"}, icon: {glyph: "", style: {foreground: "#767676"}}}
+  godot:  {filename: {foreground: "#767676"}, icon: {glyph: "", style: {foreground: "#767676"}}}
+  dump:   {filename: {foreground: "#cccccc"}, icon: {glyph: "", style: {foreground: "#cccccc"}}}
+  # ── Additional Images ──────────────────────────────────────
+  jxl:    {filename: {foreground: "#a0a0a0"}, icon: {glyph: "", style: {foreground: "#a0a0a0"}}}
+  xcf:    {filename: {foreground: "#4d4d4d"}, icon: {glyph: "", style: {foreground: "#4d4d4d"}}}
+  # ── Additional Audio ───────────────────────────────────────
+  aif:    {filename: {foreground: "#3a96dd"}, icon: {glyph: "", style: {foreground: "#3a96dd"}}}
+  aiff:   {filename: {foreground: "#3a96dd"}, icon: {glyph: "", style: {foreground: "#3a96dd"}}}
+  ape:    {filename: {foreground: "#3a96dd"}, icon: {glyph: "", style: {foreground: "#3a96dd"}}}
+  # ── Additional Video ───────────────────────────────────────
+  3gp:    {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  m4v:    {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  ogv:    {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  # ── Additional Archives ────────────────────────────────────
+  bz:     {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  bz3:    {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  tgz:    {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  txz:    {filename: {foreground: "#e6a117"}, icon: {glyph: "", style: {foreground: "#e6a117"}}}
+  # ── Additional Compiled & Binary ───────────────────────────
+  elf:    {filename: {foreground: "#c50f1f"}, icon: {glyph: "", style: {foreground: "#c50f1f"}}}
+  jar:    {filename: {foreground: "#e8916d"}, icon: {glyph: "", style: {foreground: "#e8916d"}}}
+  ko:     {filename: {foreground: "#cccccc"}, icon: {glyph: "", style: {foreground: "#cccccc"}}}
+  out:    {filename: {foreground: "#c50f1f"}, icon: {glyph: "", style: {foreground: "#c50f1f"}}}
+  # ── Additional Fonts ───────────────────────────────────────
+  eot:    {filename: {foreground: "#f2f2f2"}, icon: {glyph: "", style: {foreground: "#f2f2f2"}}}
+  # ── Additional Ebook ───────────────────────────────────────
+  mobi:   {filename: {foreground: "#e8916d"}, icon: {glyph: "", style: {foreground: "#e8916d"}}}
+  # ── Additional Security ────────────────────────────────────
+  kbx:    {filename: {foreground: "#767676"}, icon: {glyph: "󰯄", style: {foreground: "#767676"}}}
+  kdb:    {filename: {foreground: "#5ad65a"}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  kdbx:   {filename: {foreground: "#5ad65a"}, icon: {glyph: "", style: {foreground: "#5ad65a"}}}
+  # ── Downloads & Partials ───────────────────────────────────
+  crdownload: {filename: {foreground: "#47c8b0"}, icon: {glyph: "", style: {foreground: "#47c8b0"}}}
+  download: {filename: {foreground: "#47c8b0"}, icon: {glyph: "", style: {foreground: "#47c8b0"}}}
+  part:   {filename: {foreground: "#47c8b0"}, icon: {glyph: "", style: {foreground: "#47c8b0"}}}
+  torrent: {filename: {foreground: "#47c8b0"}, icon: {glyph: "", style: {foreground: "#47c8b0"}}}

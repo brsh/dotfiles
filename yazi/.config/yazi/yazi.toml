@@ -1,0 +1,83 @@
+[mgr]
+show_hidden = true
+sort_by = "natural"
+sort_sensitive = false
+sort_dir_first = true
+sort_translit = true
+show_symlink = true
+show_header = true
+linemode = "size_and_mtime"
+
+[manager]
+linemode = "size_and_mtime"
+
+[plugin]
+
+prepend_previewers = [
+{ mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}", run  = "ouch --archive-icon='🗄️ ' --show-file-icons" },
+{ url = "*.csv", run = "rich-preview"}, # for csv files
+{ url = "*.md", run = "rich-preview" }, # for markdown (.md) files
+{ url = "*.rst", run = "rich-preview"}, # for restructured text (.rst) files
+{ url = "*.ipynb", run = "rich-preview"}, # for jupyter notebooks (.ipynb)
+{ url = "*.json", run = "rich-preview"}, # for json (.json) files
+#    { url = "*.lang_type", run = "rich-preview"} # for particular language files eg. .py, .go., .lua, etc.
+]
+
+# Needed for the git plugin which borks some folders
+# [[plugin.prepend_fetchers]]
+# id    = "git" # Remove if Yazi > v26.1.22
+# url   = "*"
+# run   = "git"
+# group = "git"
+
+# Needed for the git plugin which borks some folders
+# [[plugin.prepend_fetchers]]
+# id    = "git" # Remove if Yazi > v26.1.22
+# url   = "*/"
+# run   = "git"
+# group = "git"
+
+[opener]
+# pdf = [{ run = 'xreader "$@"', desc = "Open PDF with Xreader", detach = true }]
+# img = [
+#     { run = 'xviewer "$@"', desc = "Open Image with Xviewer", detach = true },
+# ]
+# extract = [
+#     { run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },
+# ]
+# view-viu = [{ run = 'viu "$@"', desc = "View with viu", block = true }]
+# vlc = [
+#     { run = 'flatpak run org.videolan.VLC "$@"', desc = "Open with VLC", detach = true },
+# ]
+# typora = [
+#     { run = 'flatpak run io.typora.Typora "$@"', desc = "Open with Typora", detach = true },
+# ]
+# Define your editor here
+edit = [{ run = '${EDITOR:-nano} "$@"', desc = "Edit", block = true }]
+
+[open]
+#prepend_rules = [
+#    # Markdown files with Typora (prepended to ensure it matches first)
+#    { url = "*.{md,MD,markdown}", use = "typora" },
+#]
+
+rules = [
+    # # 0. PDF opening
+    # { mime = "application/pdf", use = "pdf" },
+    # { name = "*.{pdf,PDF}", use = "pdf" },
+
+    # # 1. Image opening
+    # { mime = "image/*", use = "img" },
+    # { name = "*.{jpg,jpeg,png,webp,gif,tif,tiff,TIF,TIFF,JPG,JPEG,PNG,WEBP,GIF}", use = "img" },
+
+    # # 2. Video opening
+    # { mime = "video/*", use = "vlc" },
+    # { name = "*.{mp4,mkv,avi,mov,wmv,flv,webm}", use = "vlc" },
+
+    # # 3. Archive extraction
+    # { mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}", use = "extract" },
+
+    # 4. Other text files with editor
+    #{ mime = "text/*", use = "edit" },
+    #{ name = "*.{yml,yaml,toml,lua}", use = "edit" },
+]

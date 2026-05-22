@@ -1,0 +1,109 @@
+$schema: https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+version: 4
+final_space: true
+blocks:
+  - alignment: left
+    segments:
+      - background: '#000000'
+        foreground: '#dd1e1e'
+        style: plain
+        template: ' ⚡'
+        type: root
+      - background: '#000000'
+        foreground: '#ffffff'
+        options:
+          alpine: 
+          arch: 
+          centos: 
+          debian: 
+          elementary: 
+          fedora: 
+          gentoo: 
+          linux: 
+          macos: 
+          manjaro: 
+          mint: 
+          opensuse: 
+          raspbian: 
+          ubuntu: 
+          windows: 
+        style: plain
+        template: ' {{ if .WSL }}WSL at {{ end }}{{.Icon}} '
+        type: os
+      - type: shell
+        style: diamond
+        powerline_symbol: 
+        template: '  {{ .Name }} '
+        foreground: '#ffffff'
+        background: '#4d4d4d'
+      - background: '#4d4d4d'
+        foreground: '#43CCEA'
+        options:
+          folder_icon: 
+          folder_separator_icon: <transparent>  </>
+          home_icon: 
+          style: mixed
+          mixed_threshold: 10
+          mapped_locations:
+            /Users/brian.sheaffer/Scripts:  󱜥
+            /Users/brian.sheaffer/Downloads:  
+            /Users/brian.sheaffer/.config:  
+            /Users/brian.sheaffer/Documents:  󰷉
+        style: plain
+        template: ' {{ .Path }} '
+        type: path
+      - background: '#4d4d4d'
+        foreground: '#00ff0d'
+        options:
+          fetch_status: true
+        style: plain
+        template: >-
+          <#000000> </>{{ .HEAD }}{{ if .Staging.Changed }}<#FF6F00>  {{ .Staging.String }}</>{{ end }}{{ if and
+          (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end
+          }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} 
+        type: git
+      - background: '#4d4d4d'
+        foreground: '#ffffff'
+        options:
+          style: dallas
+          threshold: 0
+        style: diamond
+        template: '<#000000> </>{{ .FormattedMs }}s '
+        trailing_diamond: 
+        type: executiontime
+    type: prompt
+  - alignment: right
+    segments:
+      - background: '#4d4d4d'
+        foreground: '#43CCEA'
+        leading_diamond: 
+        style: diamond
+        template: ' {{ if .SSHSession }} {{ end }}{{ .UserName }}<transparent> / </>{{ .HostName }}'
+        type: session
+      - type: battery
+        style: diamond
+        powerline_symbol: 
+        template: ' {{ if not .Error }}{{ .Icon }} {{ .Percentage }}%{{ end }}{{ .Error }} '
+        foreground: '#43CCEA'
+        background: '#4d4d4d'
+      - background: '#4d4d4d'
+        foreground: '#43CCEA'
+        options:
+          time_format: 3:04:05 PM
+        style: diamond
+        template: '</>{{ .CurrentDate | date .Format }} '
+        trailing_diamond: 
+        type: time
+    type: prompt
+  - alignment: left
+    newline: true
+    segments:
+      - foreground: '#00ff0d'
+        foreground_templates:
+          - '{{ if gt .Code 0 }}#ff0000{{ end }}'
+        options:
+          always_enabled: true
+        style: plain
+        template: ' '
+        type: status
+    type: prompt

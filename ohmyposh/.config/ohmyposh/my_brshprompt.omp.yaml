@@ -1,0 +1,200 @@
+$schema: https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+version: 4
+final_space: true
+maps:
+  user_name:
+    brian.sheaffer: b.s
+  host_name:
+    FMJPW2RY1Q: work
+palette:
+  black: '#0C0C0C'
+  dark-red: '#C50F1F'
+  dark-green: '#13A10E'
+  dark-yellow: '#C19C00'
+  dark-blue: '#0037DA'
+  dark-purple: '#881798'
+  dark-cyan: '#3A96DD'
+  dark-white: '#CCCCCC'
+  bright-black: '#767676'
+  red: '#E74856'
+  green: '#16C60C'
+  yellow: '#F9F1A5'
+  blue: '#3B78FF'
+  purple: '#B4009E'
+  cyan: '#61D6D6'
+  white: '#F2F2F2'
+blocks:
+  - alignment: right
+    force: true
+    segments:
+      - type: text
+        style: plain
+        template: ""
+    type: prompt
+    newline: true
+  - alignment: right
+    force: true
+    segments:
+      - type: text
+        style: plain
+        template: "\n"
+    overflow: hide
+    filler: "{{ if .Overflow }} {{ else }}<{{ if gt .Code 0 }}p:red{{ else }}p:yellow{{ end }}>─</>{{ end }}"
+    type: prompt
+    newline: true
+  - alignment: left
+    #leading_diamond: <#7eb8da>┏</>
+    segments:
+      - background: '#000000'
+        foreground: 'p:red'
+        style: plain
+        template: ' ⚡'
+        type: root
+      - background: '#000000'
+        foreground: 'p:white'
+        options:
+          alpine: 
+          arch: 
+          centos: 
+          debian: 
+          elementary: 
+          fedora: 
+          gentoo: 
+          linux: 
+          macos: 
+          manjaro: 
+          mint: 
+          opensuse: 
+          raspbian: 
+          ubuntu: 
+          windows: 
+        style: plain
+        template: '<p:white>[</>{{ if .WSL }}WSL at {{ end }}{{.Icon}}<p:white>]</>'
+        type: os
+      - type: shell
+        style: diamond
+        powerline_symbol: 
+        template: '<p:white>[{{- if eq .Name "bash" -}}󱆃 {{- else if eq .Name "zsh" -}}󰬇  {{- else if eq .Name "pwsh" -}} {{- else if eq .Name "PowerShell" -}} {{- else if eq .Name "fish" -}}󰈺 {{- else if eq .Name "cmd" -}} {{- else -}} {{ end -}}</> <p:white>{{ .Shell }}</> <p:green>{{ .ShellVersion }}</><p:white>]</>'
+        foreground: 'p:white'
+      - foreground: 'p:white'
+        style: diamond
+        template: '<p:white>[</><p:white></> <p:white>Subscription</>: <p:green>{{ .Name }}</><p:white>]</>'
+        type: az
+      - foreground: 'p:white'
+        style: diamond
+        template: >-
+          <p:white>[</><p:white></> <p:white>Azure Developer CLI Environment</>: <p:green>{{ .DefaultEnvironment  }}</> <p:white>::</> <p:green>{{ .Version }}</><p:white>]</>
+        type: azd
+      - foreground: 'p:white'
+        style: diamond
+        template: '<p:white>[</><p:white></> <p:green>{{ .Profile }}</>{{if .Region}} <p:white>@</><p:green>{{ .Region }}</>{{ end }}<p:white>]</>'
+        type: aws
+      - foreground: 'p:white'
+        style: diamond
+        template: >-
+          <p:white>[</>{{- if eq .Type "node" }} {{- else if eq .Type "deno" }} {{- else if eq .Type "jsr" }} {{- else if eq .Type "cargo" }} {{- else if eq .Type "python" }} {{- else if eq .Type "mojo" }}🔥 {{- else if eq .Type "php" }} {{- else if eq .Type "dart" }} {{- else if eq .Type "nuspec" }} {{- else if eq .Type "dotnet" }} {{- else if eq .Type "julia" }} {{- else if eq .Type "powershell" }} {{- else }}<p:white></> {{- end }} {{ if .Error }}<p:red>{{ .Error }}</>{{ else }}{{ if .Name }}<p:white>{{ .Name }}</>{{ end }}{{ if .Version }} <p:green>v{{.Version}}</>{{ end }}{{ end }}<p:white>]</>
+        type: project
+      - foreground: 'p:white'
+        style: diamond
+        template: '<p:white>[<p:white>󱃾</> <p:green>{{.Context}}</>{{if .Namespace}} <p:white>::</> <p:green>{{.Namespace}}</>{{end}}<p:white>]</>'
+        type: kubectl
+      - foreground: 'p:green'
+        options:
+          fetch_status: true
+          fetch_upstream_icon: true
+        style: plain
+        template: >-
+          <p:white>[<p:white>{{ .UpstreamIcon }} </></>{{ .HEAD }}{{if .BranchStatus }} <p:cyan>{{ .BranchStatus }}</>{{ end }}{{ if
+          .Working.Changed }} <p:yellow></> <p:yellow>{{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed)
+          (.Staging.Changed) }} <p:white>|</>{{ end }}{{ if .Staging.Changed }} <p:green></> <p:green>{{ .Staging.String }}</>{{ end }}{{ if gt
+          .StashCount 0 }} <p:white></> {{ .StashCount }}{{ end }}<p:white>]</>
+        type: git
+    type: prompt
+  - alignment: right
+    #leading_diamond: <#7eb8da>┏</>
+    segments:
+      - foreground: 'p:white'
+        options:
+          time_format: 'Mon 01/02 3:04:05pm MST'
+        style: diamond
+        template: '<p:white>[</><p:white></> <p:green>{{ .CurrentDate | date "Mon" }}</> <p:yellow>{{ .CurrentDate | date "01/02" }}</> <p:yellow>{{ .CurrentDate | date "3:04:05pm" }}</> <p:green>{{ .CurrentDate | date "MST" }}</><p:white>]</>'
+        type: time
+      - foreground: 'p:white'
+        style: diamond
+        template: >-
+          <p:white>[</><p:white></> <p:white>RAM</>: <p:green>{{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}</><p:white>/</><p:green>{{
+          (div .PhysicalTotalMemory 1073741824.0) }}GB</><p:white>]</>
+        type: sysinfo
+      - foreground: 'p:white'
+        foreground_templates:
+          - '{{if eq "Charging" .State.String}}p:cyan{{end}}'
+          - '{{if eq "Discharging" .State.String}}p:yellow{{end}}'
+          - '{{if eq "Full" .State.String}}p:green{{end}}'
+          - '{{if eq "Not Charging" .State.String}}p:green{{end}}'
+        options:
+          charged_icon: ' '
+          not_charging_icon: ' '
+          charging_icon: ' '
+          discharging_icon: ' '
+        style: plain
+        template: '<p:white>[</>{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ if .Error }}<p:red>{{ .Error }}</>{{ end }}<p:white>]</>'
+        type: battery
+      - foreground: 'p:white'
+        options:
+          style: austin
+          threshold: 0
+        style: diamond
+        template: '<p:white>[</><p:white></> <p:yellow>{{ .FormattedMs }}s</><p:white>]</>'
+        type: executiontime
+    type: prompt
+  - alignment: left
+    newline: true
+    #leading_diamond: <#7eb8da>┣</>
+    segments:
+      - foreground: 'p:green'
+        options:
+          style: full
+          folder_separator_icon: '<p:white>/</>' 
+        style: diamond
+        template: '<p:white>[</><p:white></> {{ .Path }}<p:white>]</>'
+        type: path
+    type: prompt
+  - alignment: right
+    segments:
+      - foreground: 'p:white'
+        style: plain
+        template: '<p:white>[</><p:white></> <p:green>{{ .UserName }}</> <p:white></> <p:yellow>{{ .HostName }}</><p:white>]</>'
+        type: session
+        options:
+          display_default: true
+    type: prompt
+  - alignment: right
+    force: true
+    newline: true
+    segments:
+      - type: text
+        style: plain
+        template: ""
+    overflow: hide
+    filler: "{{ if .Overflow }} {{ else }}<{{ if gt .Code 0 }}p:red{{ else }}p:yellow{{ end }}>─</>{{ end }}"
+    type: prompt
+  - alignment: left
+    newline: true
+    #leading_diamond: <#7eb8da>└─</>
+    segments:
+      - style: diamond
+        template: <p:yellow>[#]</>
+        type: root
+      - style: diamond
+        template: '>'
+        type: text
+    type: prompt
+valid_line:
+  background: transparent
+  template: '> '
+error_line:
+  background: transparent
+  template: '<p:red></> '
+secondary_prompt:
+  background: transparent
+  template: ' '

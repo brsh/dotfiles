@@ -1,0 +1,28 @@
+[[mgr.prepend_keymap]]
+on   = ["C"]
+run  = "plugin ouch"
+desc = "Compress with ouch"
+
+[[mgr.prepend_keymap]]
+on  = [ "F", "G" ]
+run = "plugin yafg"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "l" ]
+run  = "plugin open-git-remote"
+desc = "open git remote url"
+
+[[mgr.prepend_keymap]]
+on   = "<Enter>"
+run  = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"
+
+[[mgr.prepend_keymap]]
+on   = [ "<C-p>" ]
+run  = "plugin command"
+desc = "Open command palette"
+
+[[mgr.prepend_keymap]]
+on = "z"
+run = "plugin zoxide"
+desc = "Jump to a directory using zoxide"
