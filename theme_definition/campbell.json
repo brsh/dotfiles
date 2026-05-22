@@ -1,0 +1,51 @@
+{
+  "name": "Extended Campbell Palette",
+  "description": "Derived from Microsoft Campbell 16 — core 16 colors plus interpolated midpoints, tints, and cross-hue blends.",
+  "core16": {
+    "black":            "#0c0c0c",
+    "black_bright":     "#767676",
+    "red":              "#c50f1f",
+    "red_bright":       "#e74856",
+    "green":            "#13a10e",
+    "green_bright":     "#16c60c",
+    "yellow":           "#f19c00",
+    "yellow_bright":    "#f9f1a5",
+    "blue":             "#0037da",
+    "blue_bright":      "#3b78ff",
+    "magenta":          "#881798",
+    "magenta_bright":   "#b4009e",
+    "cyan":             "#3a96dd",
+    "cyan_bright":      "#61d6d6",
+    "white":            "#cccccc",
+    "white_bright":     "#f2f2f2"
+  },
+  "extended": {
+    "red_mid":          "#d63545",
+    "red_tint":         "#f28b95",
+    "green_mid":        "#15b40f",
+    "green_tint":       "#5ad65a",
+    "yellow_mid":       "#f4b841",
+    "blue_mid":         "#1f5beb",
+    "blue_tint":        "#7da6ff",
+    "magenta_mid":      "#9c2bab",
+    "magenta_tint":     "#d04ecc",
+    "cyan_mid":         "#4db5e5",
+    "cyan_tint":        "#93e5e5",
+    "gray_mid":         "#4d4d4d",
+    "gray_lt":          "#a0a0a0"
+  },
+  "blends": {
+    "teal":             "#2a9d8f",
+    "orange":           "#e8790c",
+    "rose":             "#d64d8a",
+    "indigo":           "#5856d6",
+    "olive":            "#8db600",
+    "amber":            "#e6a117",
+    "slate":            "#6987c9",
+    "peach":            "#e8916d",
+    "violet":           "#7b68ee",
+    "aqua":             "#47c8b0",
+    "coral":            "#f07e6e",
+    "sky":              "#5fb5e8"
+  }
+}

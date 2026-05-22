@@ -1,11 +1,6 @@
 $schema: https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
 version: 4
 final_space: true
-maps:
-  user_name:
-    brian.sheaffer: b.s
-  host_name:
-    FMJPW2RY1Q: work
 palette:
   black: '#0C0C0C'
   dark-red: '#C50F1F'
@@ -163,7 +158,7 @@ blocks:
     segments:
       - foreground: 'p:white'
         style: plain
-        template: '<p:white>[</><p:white></> <p:green>{{ .UserName }}</> <p:white></> <p:yellow>{{ .HostName }}</><p:white>]</>'
+        template: '<p:white>[</><p:white></> <p:green>{{ or .Env.OMP_USER_DISPLAY .UserName }}</> <p:white></> <p:yellow>{{ or .Env.OMP_HOST_DISPLAY .HostName }}</><p:white>]</>'
         type: session
         options:
           display_default: true

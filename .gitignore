@@ -1,0 +1,31 @@
+# ─── macOS ────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverrideIcon
+
+# ─── Editor / IDE ─────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.orig
+*.bak
+*.rej
+
+# ─── Local machine overrides (never commit) ───────────────────────────────────
+# bash  (bash/.config/bash/bash.bashrc.local)
+bash/.config/bash/bash.bashrc.local
+
+# zsh   (zsh/.config/zsh/.zshrc.local)
+zsh/.config/zsh/.zshrc.local
+
+# kitty per-host configs  (kitty/.config/kitty/hosts/<hostname>.conf)
+kitty/.config/kitty/hosts/
+
+# oh-my-posh local palette/map overrides
+ohmyposh/.config/ohmyposh/*.local.yaml

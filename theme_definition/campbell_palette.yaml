@@ -1,0 +1,82 @@
+# Extended Campbell Palette — Oh My Posh
+#
+# Copy the `palette:` block below into any .omp.yaml theme to get named
+# color references for all 41 Extended Campbell colors.
+#
+# Reference colors in segment templates with `p:name` syntax:
+#   foreground: 'p:blue'
+#   template: '<p:amber>{{ .Path }}</>'
+#
+# Naming convention follows the existing brshprompt theme:
+#   - dark-* prefix  →  normal (dim) Campbell variant
+#   - bare name      →  bright Campbell variant
+#   - extended/blend names are added alongside without renaming existing keys
+#
+# NOTE: The existing brshprompt palette uses `dark-yellow: '#C19C00'` which
+# differs from the canonical Campbell value `#f19c00` used here. Update your
+# template references to `p:dark-yellow` if you switch to this palette block.
+
+palette:
+
+  # ─── Core 16 — Campbell Base ───────────────────────────────────────────────
+
+  black:               '#0c0c0c'
+  bright-black:        '#767676'
+
+  dark-red:            '#c50f1f'
+  red:                 '#e74856'
+
+  dark-green:          '#13a10e'
+  green:               '#16c60c'
+
+  dark-yellow:         '#f19c00'
+  yellow:              '#f9f1a5'
+
+  dark-blue:           '#0037da'
+  blue:                '#3b78ff'
+
+  dark-purple:         '#881798'
+  purple:              '#b4009e'
+
+  dark-cyan:           '#3a96dd'
+  cyan:                '#61d6d6'
+
+  dark-white:          '#cccccc'
+  white:               '#f2f2f2'
+
+  # ─── Extended — Interpolated Hue Families ──────────────────────────────────
+
+  red-mid:             '#d63545'
+  red-tint:            '#f28b95'
+
+  green-mid:           '#15b40f'
+  green-tint:          '#5ad65a'
+
+  yellow-mid:          '#f4b841'
+
+  blue-mid:            '#1f5beb'
+  blue-tint:           '#7da6ff'
+
+  purple-mid:          '#9c2bab'
+  purple-tint:         '#d04ecc'
+
+  cyan-mid:            '#4db5e5'
+  cyan-tint:           '#93e5e5'
+
+  gray-mid:            '#4d4d4d'
+  gray-lt:             '#a0a0a0'
+
+  # ─── Cross-Hue Blends ──────────────────────────────────────────────────────
+
+  teal:                '#2a9d8f'
+  orange:              '#e8790c'
+  rose:                '#d64d8a'
+  indigo:              '#5856d6'
+  olive:               '#8db600'
+  amber:               '#e6a117'
+  slate:               '#6987c9'
+  peach:               '#e8916d'
+  violet:              '#7b68ee'
+  aqua:                '#47c8b0'
+  coral:               '#f07e6e'
+  sky:                 '#5fb5e8'
