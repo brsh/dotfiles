@@ -23,6 +23,7 @@ bash/.config/bash/bash.bashrc.local
 
 # zsh   (zsh/.config/zsh/.zshrc.local)
 zsh/.config/zsh/.zshrc.local
+zsh/.config/zsh/.zcompdump
 
 # kitty per-host configs  (kitty/.config/kitty/hosts/<hostname>.conf)
 kitty/.config/kitty/hosts/
