@@ -1,0 +1,116 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: pwsh
+description: PowerShell command-line interface
+
+flags:
+  # ── Execution ──────────────────────────────────────────────────────────────
+  -Command=: "Execute commands as though typed at the prompt"
+  -c=: "Alias for -Command"
+  -EncodedCommand=: "Base64-encoded command string"
+  -ec=: "Alias for -EncodedCommand"
+  -File=: "Run the specified script file"
+  -f=: "Alias for -File"
+
+  # ── Profile & startup ──────────────────────────────────────────────────────
+  -NoExit: "Do not exit after running startup commands"
+  -noe: "Alias for -NoExit"
+  -NoLogo: "Suppress the copyright banner"
+  -nol: "Alias for -NoLogo"
+  -NoProfile: "Do not load the PowerShell profile"
+  -nop: "Alias for -NoProfile"
+  -NoProfileLoadTime: "Do not report profile load time"
+  -Interactive: "Force an interactive prompt"
+  -i: "Alias for -Interactive"
+  -NonInteractive: "Suppress interactive prompt"
+  -noni: "Alias for -NonInteractive"
+  -Login: "Start as a login shell (Linux/macOS)"
+  -l: "Alias for -Login"
+
+  # ── Policy & format ────────────────────────────────────────────────────────
+  -ExecutionPolicy=: "Set execution policy for this session (Windows only)"
+  -ex=: "Alias for -ExecutionPolicy"
+  -ep=: "Alias for -ExecutionPolicy"
+  -InputFormat=: "Format of data piped to pwsh"
+  -if=: "Alias for -InputFormat"
+  -OutputFormat=: "Format of pwsh output"
+  -of=: "Alias for -OutputFormat"
+
+  # ── Environment ────────────────────────────────────────────────────────────
+  -WorkingDirectory=: "Set initial working directory"
+  -wd=: "Alias for -WorkingDirectory"
+  -WindowStyle=: "Set window style (Windows only)"
+  -w=: "Alias for -WindowStyle"
+  -ConfigurationName=: "Named session configuration endpoint"
+  -ConfigurationFile=: "Path to a session configuration (.pssc) file"
+  -SettingsFile=: "Override system-wide powershell.config.json"
+  -CustomPipeName=: "Named pipe for IPC"
+  -ApartmentState=: "COM apartment threading model (Windows only)"
+
+  # ── Misc ───────────────────────────────────────────────────────────────────
+  -SSHServerMode: "Enable SSH subsystem mode"
+  -MTA: "Use multi-threaded apartment (Windows only)"
+  -STA: "Use single-threaded apartment (Windows only)"
+  -Version: "Show PowerShell version and exit"
+  -v: "Alias for -Version"
+
+completion:
+  flag:
+    File:            ["$files([.ps1,.psm1,.psd1])"]
+    f:               ["$files([.ps1,.psm1,.psd1])"]
+    ConfigurationFile: ["$files([.pssc])"]
+    SettingsFile:    ["$files([.json])"]
+    WorkingDirectory: ["$directories"]
+    wd:              ["$directories"]
+    ExecutionPolicy:
+      - "AllSigned\tOnly signed scripts run"
+      - "Bypass\tNo restrictions; no warnings"
+      - "Default\tRestricted (Win) or RemoteSigned (non-Win)"
+      - "RemoteSigned\tDownloaded scripts must be signed"
+      - "Restricted\tNo scripts; interactive only"
+      - "Undefined\tRemove policy from current scope"
+      - "Unrestricted\tAll scripts run; prompt on downloaded"
+    ex:
+      - "AllSigned\tOnly signed scripts run"
+      - "Bypass\tNo restrictions; no warnings"
+      - "Default\tRestricted (Win) or RemoteSigned (non-Win)"
+      - "RemoteSigned\tDownloaded scripts must be signed"
+      - "Restricted\tNo scripts; interactive only"
+      - "Undefined\tRemove policy from current scope"
+      - "Unrestricted\tAll scripts run; prompt on downloaded"
+    ep:
+      - "AllSigned\tOnly signed scripts run"
+      - "Bypass\tNo restrictions; no warnings"
+      - "Default\tRestricted (Win) or RemoteSigned (non-Win)"
+      - "RemoteSigned\tDownloaded scripts must be signed"
+      - "Restricted\tNo scripts; interactive only"
+      - "Undefined\tRemove policy from current scope"
+      - "Unrestricted\tAll scripts run; prompt on downloaded"
+    InputFormat:
+      - "Text\tPlain text string"
+      - "XML\tSerialized CLIXML format"
+    if:
+      - "Text\tPlain text string"
+      - "XML\tSerialized CLIXML format"
+    OutputFormat:
+      - "Text\tPlain text string"
+      - "XML\tSerialized CLIXML format"
+    of:
+      - "Text\tPlain text string"
+      - "XML\tSerialized CLIXML format"
+    WindowStyle:
+      - "Hidden"
+      - "Maximized"
+      - "Minimized"
+      - "Normal"
+    w:
+      - "Hidden"
+      - "Maximized"
+      - "Minimized"
+      - "Normal"
+    ApartmentState:
+      - "MTA\tMulti-threaded apartment"
+      - "STA\tSingle-threaded apartment"
+      - "Unknown"
+
+  positional:
+    - ["$files([.ps1,.psm1])"]

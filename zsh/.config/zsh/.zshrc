@@ -46,6 +46,12 @@ if command -v kubecolor &>/dev/null; then
   compdef kubecolor=kubectl
 fi
 
+# carapace uses compdef, so must come after compinit
+if command -v carapace &>/dev/null; then
+  export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+  source <(carapace _carapace zsh)
+fi
+
 # ─── Turbo Plugins & Snippets (deferred — load after first prompt) ────────────
 zinit wait lucid light-mode for \
   Aloxaf/fzf-tab \
