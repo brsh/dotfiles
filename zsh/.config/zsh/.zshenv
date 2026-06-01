@@ -3,7 +3,7 @@
 # Keep this minimal — only variables every process needs.
 # Note: Homebrew PATH is not available here; it is set in .zprofile.
 
-[[ ! -v HOSTNAME ]] && [[ -v HOST ]] export HOSTNAME=$HOST
+[[ ! -v HOSTNAME ]] && [[ -v HOST ]] && export HOSTNAME=$HOST
 
 # ─── Locale ───────────────────────────────────────────────────────────────────
 export LANG=en_US.UTF-8

@@ -1,0 +1,21 @@
+bind ^/ comment all
+
+set nowrap
+set autoindent
+#set smooth
+set mouse
+set smarthome
+set minibar
+set nonewlines
+set solosidescroll
+set tabsize 4
+set tabstospaces
+
+#Colors - Not for Macs :(
+set titlecolor brightwhite,blue 
+set statuscolor brightwhite,blue
+set keycolor green,black
+set functioncolor yellow,black
+
+include ~/.config/nano/lsp/*.nanorc
+

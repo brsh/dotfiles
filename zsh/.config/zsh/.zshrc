@@ -253,22 +253,27 @@ elif [[ -n "$WSL_DISTRO_NAME" ]]; then
     ssh-add 2>/dev/null
   fi
 
-else
+#else
   # Linux: persist the agent socket across terminals via a saved env file
-  _ssh_env="${HOME}/.ssh/agent-env"
-  [[ -f "$_ssh_env" ]] && source "$_ssh_env" >/dev/null
-  ssh-add -l &>/dev/null; _agent_rc=$?
-  if [[ $_agent_rc -eq 2 ]]; then
-    # No agent running or socket is dead — start a fresh one
-    ssh-agent > "$_ssh_env" && chmod 600 "$_ssh_env"
-    source "$_ssh_env" >/dev/null
-    ssh-add 2>/dev/null
-  elif [[ $_agent_rc -eq 1 ]]; then
-    # Agent running but empty — add default keys
-    ssh-add 2>/dev/null
-  fi
-  unset _ssh_env _agent_rc
+#  _ssh_env="${HOME}/.ssh/agent-env"
+#  [[ -f "$_ssh_env" ]] && source "$_ssh_env" >/dev/null
+#  ssh-add -l &>/dev/null; _agent_rc=$?
+#  if [[ $_agent_rc -eq 2 ]]; then
+#    # No agent running or socket is dead — start a fresh one
+#    ssh-agent > "$_ssh_env" && chmod 600 "$_ssh_env"
+#    source "$_ssh_env" >/dev/null
+#    ssh-add 2>/dev/null
+#  elif [[ $_agent_rc -eq 1 ]]; then
+#    # Agent running but empty — add default keys
+#    ssh-add 2>/dev/null
+#  fi
+#  unset _ssh_env _agent_rc
 fi
+
+# ─── Path ─────────────────────────────────────────────────────────────────────
+
+export PATH="$HOME/.local/bin:$PATH"
+
 
 # ─── Prompt ───────────────────────────────────────────────────────────────────
 
@@ -276,9 +281,6 @@ if command -v oh-my-posh &>/dev/null && [[ "$TERM_PROGRAM" != "Apple_Terminal" ]
   eval "$(oh-my-posh init zsh --config "${XDG_CONFIG_HOME}/ohmyposh/my_brshprompt.omp.yaml")"
 fi
 
-# ─── Path ─────────────────────────────────────────────────────────────────────
-
-export PATH="$HOME/.local/bin:$PATH"
 
 # ─── Local Overrides ──────────────────────────────────────────────────────────
 # Machine-specific settings (gitignored). Create: ~/.config/zsh/.zshrc.local
