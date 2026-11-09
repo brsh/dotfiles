@@ -1,7 +1,11 @@
 ---
 trigger: glob
-glob: "**/{Dockerfile*,docker-compose*.yml,docker-compose*.yaml,.dockerignore}"
 description: "Docker and container best practices for sysadmin-managed workloads"
+globs: 
+  - "**/Dockerfile*"
+  - "**/docker-compose*.yml"
+  - "**/docker-compose*.yaml"
+  - "**/.dockerignore"
 ---
 
 # Docker / Container Rules

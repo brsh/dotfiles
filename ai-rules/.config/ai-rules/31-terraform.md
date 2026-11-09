@@ -1,7 +1,9 @@
 ---
 trigger: glob
-glob: "**/*.{tf,tfvars}"
 description: "Terraform and OpenTofu IaC best practices"
+globs: 
+  - "**/*.tf"
+  - "**/*.tfvars"
 ---
 
 # Terraform / OpenTofu Rules

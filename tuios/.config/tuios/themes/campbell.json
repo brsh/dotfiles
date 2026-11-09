@@ -1,0 +1,42 @@
+{
+  "id": "campbell",
+  "display_name": "Campbell",
+  "dark": true,
+
+  "fg": "#cccccc",
+  "bg": "#0c0c0c",
+  "cursor": "#f2f2f2",
+
+  "black":   "#0c0c0c",
+  "red":     "#c50f1f",
+  "green":   "#13a10e",
+  "yellow":  "#f19c00",
+  "blue":    "#0037da",
+  "purple":  "#881798",
+  "cyan":    "#3a96dd",
+  "white":   "#cccccc",
+
+  "bright_black":   "#767676",
+  "bright_red":     "#e74856",
+  "bright_green":   "#16c60c",
+  "bright_yellow":  "#f9f1a5",
+  "bright_blue":    "#3b78ff",
+  "bright_purple":  "#b4009e",
+  "bright_cyan":    "#61d6d6",
+  "bright_white":   "#f2f2f2",
+
+  "chrome": {
+    "accent":        "#3b78ff",
+    "accent_bright": "#61d6d6",
+    "success":       "#16c60c",
+    "warning":       "#f19c00",
+    "error":         "#e74856",
+    "info":          "#5fb5e8",
+
+    "border": { "unfocused": "#4d4d4d", "copy": "#f4b841", "multifocus": "#9c2bab" },
+    "status": { "attention": "#e8790c", "busy": "#3b78ff" },
+    "dots":   { "close": "#e74856", "minimize": "#f4b841", "zoom": "#16c60c" },
+    "dock":   { "ground": "#161616" },
+    "rail":   { "ground": "#161616" }
+  }
+}

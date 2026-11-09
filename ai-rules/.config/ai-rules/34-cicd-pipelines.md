@@ -1,7 +1,13 @@
 ---
 trigger: glob
-glob: "**/{.github/workflows,azure-pipelines,pipelines}/*.{yml,yaml}"
 description: "CI/CD pipeline best practices — GitHub Actions and Azure DevOps for sysadmin script automation"
+globs: 
+  - "**/.github/workflows/*.yml"
+  - "**/.github/workflows/*.yaml"
+  - "**/azure-pipelines/*.yml"
+  - "**/azure-pipelines/*.yaml"
+  - "**/pipelines/*.yml"
+  - "**/pipelines/*.yaml"
 ---
 
 # CI/CD Pipeline Rules

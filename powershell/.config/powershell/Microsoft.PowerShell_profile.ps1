@@ -1,7 +1,7 @@
 Set-PSReadLineOption -EditMode Windows
 Set-PSReadLineOption -Colors @{ "Selection" = "`e[7m" }
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-carapace _carapace | Out-String | Invoke-Expression
+#carapace _carapace | Out-String | Invoke-Expression
 
 
 if (test-path '~/Scripts/lib.ps/Profile/profile.ps1') {

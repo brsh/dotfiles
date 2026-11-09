@@ -1,5 +1,6 @@
 ---
-trigger: always_on
+trigger: model_decision
+description: "Linux sysadmin context — activate when working with Linux systems, systemd, package management, or Linux infrastructure"
 ---
 
 # Linux Sysadmin Context

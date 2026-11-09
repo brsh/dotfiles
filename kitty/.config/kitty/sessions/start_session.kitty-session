@@ -1,4 +1,2 @@
 cd ~
 launch --title "Base"
-new_tab pwsh
-launch pwsh

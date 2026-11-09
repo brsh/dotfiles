@@ -1,7 +1,8 @@
 ---
 trigger: glob
-glob: "**/*.py"
 description: "Python scripting best practices for sysadmin automation and tooling"
+glob: 
+  - "**/*.py"
 ---
 
 # Python Rules

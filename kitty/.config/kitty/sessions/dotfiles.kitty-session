@@ -1,0 +1,3 @@
+cd ~/.config
+new_tab dotfiles
+launch --title "dotfiles"

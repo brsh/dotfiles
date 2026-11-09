@@ -1,7 +1,9 @@
 ---
 trigger: glob
-glob: "**/*.{yml,yaml}"
 description: "YAML and Ansible best practices for infrastructure automation"
+globs: 
+  - "**/*.yml"
+  - "**/*.yaml"
 ---
 
 # YAML and Ansible Rules

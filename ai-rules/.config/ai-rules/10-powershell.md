@@ -1,7 +1,11 @@
 ---
 trigger: glob
-glob: "**/*.{ps1,psm1,psd1,ps1xml}"
 description: "PowerShell scripting best practices for sysadmin automation"
+globs: 
+  - "**/*.ps1"
+  - "**/*.psm1"
+  - "**/*.psd1"
+  - "**/*.ps1xml"
 ---
 
 # PowerShell Rules
@@ -464,13 +468,16 @@ For reusable modules:
 MyModule\
 ├── MyModule.psd1          # manifest (version, dependencies, exported functions)
 ├── MyModule.psm1          # module root (imports all function files)
+├── Configs\               # configuration files
+├── Formats\               # .ps1xml format files
 ├── Public\                # exported functions (one file per function)
 │   ├── Get-Thing.ps1
 │   └── Set-Thing.ps1
 ├── Private\               # internal helpers (not exported)
 │   └── ConvertTo-Formatted.ps1
-└── tests\
-    └── Get-Thing.Tests.ps1
+├── Tests\
+│   └── Get-Thing.Tests.ps1
+└── README.md
 ```
 
 ---

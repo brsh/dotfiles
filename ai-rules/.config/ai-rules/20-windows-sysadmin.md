@@ -1,5 +1,6 @@
 ---
-trigger: always_on
+trigger: model_decision
+description: "Windows sysadmin context — activate when working with Windows Server, Active Directory, Group Policy, or Windows infrastructure"
 ---
 
 # Windows Sysadmin Context

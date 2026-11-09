@@ -1,7 +1,12 @@
 ---
 trigger: glob
-glob: "**/*.{cs,csproj,sln,cshtml,razor}"
 description: "C# and .NET best practices — sysadmin tooling, scripting, and game development"
+glob: 
+  - "**/*.cs"
+  - "**/*.csproj"
+  - "**/*.sln"
+  - "**/*.cshtml"
+  - "**/*.razor"
 ---
 
 # C# / .NET Rules

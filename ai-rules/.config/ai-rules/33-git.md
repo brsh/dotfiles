@@ -1,6 +1,6 @@
 ---
-trigger: always_on
-description: "Git best practices — commit conventions, branching, secrets hygiene, .gitignore, and workflow"
+trigger: model_decision
+description: "Git best practices — activate when working with git operations, commits, branching, repo management, or .gitignore"
 ---
 
 # Git Best Practices
@@ -324,9 +324,12 @@ git push --force-with-lease       # force push safely (fails if remote changed u
 
 ## Global Git Configuration (run once per machine)
 
+> **AI:** Don't fill in `user.name` or `user.email` yourself. Ask the user for
+> both before suggesting or running these two commands.
+
 ```bash
-git config --global user.name "Brian Sheaffer"
-git config --global user.email "brian@example.com"
+git config --global user.name "<ask user for full name>"
+git config --global user.email "<ask user for email>"
 
 # Default branch name
 git config --global init.defaultBranch main

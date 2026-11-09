@@ -1,7 +1,9 @@
 ---
 trigger: glob
-glob: "**/*.{sh,bash}"
 description: "Bash/shell scripting best practices for sysadmin automation"
+glob: 
+  - "**/*.sh"
+  - "**/*.bash"
 ---
 
 # Bash / Shell Scripting Rules

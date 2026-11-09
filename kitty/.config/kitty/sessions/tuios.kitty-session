@@ -1,0 +1,6 @@
+# TUIOS-INTEGRATION — delete this file to revert.
+# An OS window that is the tuios "main" session (attach-or-create happens via
+# startup.session in tuios's config.toml). Pick it from kitty_mod+g / the
+# session selector, or map a key to it like the other goto_session entries.
+cd ~
+launch --title "tuios" tuios
