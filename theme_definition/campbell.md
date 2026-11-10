@@ -15,6 +15,7 @@
 | `campbell.fish` | Fish | `source` in `config.fish` |
 | `campbell.json` | JSON | Programmatic reference / scripting |
 | `campbell.conf` | Kitty conf | `include` in `kitty.conf` |
+| `campbell.itermcolors` | XML plist | Import via iTerm2 Color Presets |
 | `campbell_palette.yaml` | YAML | Drop `palette:` block into `.omp.yaml` |
 
 Variable naming conventions per format:
@@ -187,6 +188,21 @@ segment templates using `p:name`:
 > `p:dark-yellow` references if you switch.
 > The existing `p:purple` / `p:dark-purple` keys are preserved (OMP uses
 > "purple" for what this palette calls "magenta").
+
+---
+
+### iTerm2
+
+```text
+iTerm2 → Settings → Profiles → Colors → Color Presets… → Import…
+Select theme_definition/campbell.itermcolors, then choose "Extended Campbell" from
+the Color Presets dropdown to apply it to the active profile.
+```
+
+All 16 ANSI slots, background, foreground, bold, cursor, selection, and link colors
+are set. Extended/blend colors are listed in comments inside the file for reference;
+use their hex values in any iTerm2 profile field that accepts a color directly
+(e.g. Tab Color, Badge Color, Underline Color).
 
 ---
 

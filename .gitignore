@@ -30,3 +30,10 @@ kitty/.config/kitty/hosts/
 
 # oh-my-posh local palette/map overrides
 ohmyposh/.config/ohmyposh/*.local.yaml
+
+# karabiner auto-generated backups
+karabiner/.config/karabiner/automatic_backups/
+
+# ─── Private AI-rule overlays (personal / work context) ───────────────────────
+ai-rules-work/
+ai-rules-personal/

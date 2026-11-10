@@ -1,0 +1,3 @@
+cd ~
+new_tab pwsh
+launch pwsh

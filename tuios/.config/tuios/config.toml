@@ -1,0 +1,330 @@
+# TUIOS Configuration File
+# This file allows you to customize appearance and keybindings
+#
+# Configuration location: ~/.config/tuios/config.toml
+# Documentation: https://github.com/Gaurav-Gosain/tuios
+# For keybindings documentation, run: tuios keybinds list
+#
+# tuios watches this file. A save takes effect at once, with no restart.
+# tuios does not apply a file that has an error. It keeps the settings that
+# are in use and shows the error on screen.
+
+# ============================================================================
+# APPEARANCE SETTINGS
+# ============================================================================
+# Many of these can be changed live from the in-app settings page
+# (open it with the leader key followed by ',').
+#
+# border_style: rounded, normal, thick, double, hidden, block, ascii,
+#               outer-half-block, inner-half-block
+# dockbar_position: bottom, top, hidden
+# window_title_position: bottom, top, hidden
+# window_button_style: pill, dots (macOS traffic lights)
+# window_button_position: right, left. Independent of the style; dots and
+#               left is the shipped pair, the macOS arrangement
+# theme: color theme name (e.g. dracula, nord); empty for terminal colors
+# click_to_type: single (a click on a pane starts typing in it), double
+#               (two clicks do), off (a click only focuses)
+# auto_enter_terminal_on_focus: off (Tab keeps cycling windows),
+#               targeted (numbered select and arrows start typing),
+#               all (every covered focus command, including Tab)
+# [appearance.scrollbar]: style = thin, track; thumb/track = a one-cell glyph
+#               (track also takes "none"); tint = border, muted, #RRGGBB
+# background: off (your terminal shows through), theme (the theme's
+#               background), or #RRGGBB, for every surface at once
+# pane_background, desktop_background, window_chrome_background,
+#               dock_background, [appearance.sidebar] background: the same
+#               values for one surface; empty follows background, and a
+#               colour a program or the chrome chose always wins
+# ============================================================================
+
+# ============================================================================
+# KEYBINDINGS
+# ============================================================================
+# Set an action to [] to unbind it and hand the key back to the shell.
+# An empty list and a missing line are not the same thing. A line this file
+# does not have gets its default back the next time tuios starts; an action
+# set to [] stays empty.
+#
+# You do not have to edit this by hand. In tuios, open the keybind manager
+# (leader then k, or the command palette) and press ctrl+d on a binding to
+# remove it, or ctrl+x to take its key off every action. From a shell:
+#
+#   tuios keybinds unbind close_window w   # one key off one action
+#   tuios keybinds free alt+left           # off every action
+#
+# `tuios keybinds doctor` says which binding in each scope is live, what
+# clashes with what, and which keys never reach the program in the pane.
+#
+# [keybindings.global] acts in window mode and terminal mode alike. It binds
+# ctrl+p to the command palette and alt+space to the launcher, which costs
+# you fish's history-back and readline's set-mark. To move or drop either:
+#
+#   [keybindings.global]
+#   command_palette = ["ctrl+shift+p"]
+#   launcher = []
+#
+# [keybindings.terminal_mode] binds alt+arrows to move focus between panes.
+# In readline, fish and zsh, alt+left and alt+right move the cursor a word
+# at a time. If you want those back:
+#
+#   [keybindings.terminal_mode]
+#   terminal_focus_left = []
+#   terminal_focus_right = []
+#
+# alt+up and alt+down are unclaimed by the common shells, so they are the
+# safer pair to keep.
+#
+# shift+pgup and shift+pgdown scroll one page. middle pastes from the host
+# clipboard. Write ctrl+middle to add a modifier.
+#
+# hold_window_mode binds a key that puts tuios in window-management mode for
+# as long as it is physically held, and hands the previous mode back when it
+# is let go:
+#
+#   [keybindings.mode_control]
+#   hold_window_mode = ["leftalt"]
+#
+# It needs a terminal that speaks the Kitty keyboard protocol (Ghostty, kitty,
+# WezTerm, foot, Alacritty; not Terminal.app), because nothing else reports
+# that a key was released. Naming a modifier key (leftalt, rightalt, leftctrl,
+# leftsuper) asks the terminal for one more thing on top: every keystroke in
+# the session then arrives as an escape code. Any ordinary key (f13 to f63,
+# scrolllock, a spare letter) avoids that. Unbound by default.
+# ============================================================================
+
+# ============================================================================
+# DOCK COMPONENTS
+# ============================================================================
+# The dock is three ordered lists of component names. Leave [dock] out
+# entirely and the bar draws what it always drew; write the lists to
+# reorder it, and omit a name to drop that segment.
+#
+#   [dock]
+#   left   = ["mode", "workspaces", "trail", "tape"]
+#   center = ["windows"]
+#   right  = ["notifications", "copy-help", "cpu", "ram", "clock", "session-controls"]
+#
+# A cell of your own is a command whose first line of stdout is the text:
+#
+#   [dock.custom.branch]
+#   command = "git branch --show-current"
+#   refresh = "event:after-focus-change"   # or once, push, or "30s"
+#
+# and then "custom/branch" in one of the lists above. A component that
+# fails is hidden rather than left showing a stale value;
+# `tuios list-dock-components` says which and why.
+# ============================================================================
+
+[startup]
+tiled = true
+daemon = true
+layout = "scrolling"
+# TUIOS-INTEGRATION: plain `tuios` now does what `tuios attach main -c` does
+# (attach-or-create, like tmux new -A -s main). Delete to restore the
+# most-recent-session default.
+session = "main"
+open_default_window = true
+start_in_terminal_mode = true
+window = "start"
+
+[appearance]
+alt_drag = false
+animation_speed = 200
+auto_enter_terminal_on_focus = "all"
+border_style = "thick"
+calm = false
+click_to_type = "double"
+clock_format = "Mon 3:04pm"
+dock_compact = false
+dock_mode_icon_terminal = "term"
+dock_mode_pill = "tiling"
+dock_pill_caps = true
+dock_prefix_indicator = "pill"
+dock_workspace_tab_format = ""
+dock_workspace_tabs = true
+dockbar_position = "top"
+frame_panels = true
+gap = 0
+glyphs = "default"
+hide_window_buttons = false
+motion = "full"
+new_window_follow_ssh = false
+pane_overlays = false
+panel_padding = 1
+right_click_opens_menu = true
+scrollback_lines = 10000
+session_border = true
+session_colors = true
+shared_borders = false
+show_clock = true
+show_cpu = true
+show_ram = true
+theme = "campbell"
+tiling_scheme = "smart_split"
+whichkey_position = "bottom-right"
+window_button_position = "left"
+window_button_style = "dots"
+window_button_zoom = true
+window_title_align = "right"
+window_title_format = "{index}: {title} {cwd}"
+window_title_position = "top"
+window_title_style = "pill"
+
+[appearance.sidebar.left]
+enabled = true
+width = 30
+
+[appearance.sidebar]
+enabled = true
+width = 30
+position = "left"
+header_case = "lowercase"
+row_style = "pill"
+header_style = "rule"
+density = "roomy"
+show_numbers = true
+file_icons = true
+file_icon_colors = true
+folder_click = "navigate"
+files_style = "list"
+sections = "sessions:25,terminals,files:25,agents:34,git"
+show_counts = true
+group_main = true
+subagent_rows = "tree"
+subagent_collapse = "off"
+
+[appearance.sidebar.right]
+enabled = false
+width = 25
+
+[spotlight]
+enabled = false
+
+# ============================================================================
+# TUIOS-INTEGRATION START — kitty/tmux layering experiment.
+# Delete everything between START and END to revert to stock tuios keys.
+# ============================================================================
+
+# Remote machines (personal servers with tuios installed; work servers cannot
+# run it). Uncomment and edit per host, then `tuios hosts` shows link state.
+#   tuios attach --host NAME        remote session, drawn here (not nested)
+#   tuios new-window X --host NAME  remote pane inside a local session
+# To keep host names out of the dotfiles repo, put this table in
+# ~/.config/tuios/config.d/hosts.toml instead (tuios reads config.d/*.toml).
+# [hosts.devbox]
+# addr = "brian@devbox.example.com"
+
+# tmux key grammar: leader + c new window, %/|/\ split right, "/- split down,
+# d detach, [ copy mode, arrows focus, 1-9 workspace, z zoom, s session picker,
+# w workspace picker. Pressing the leader twice sends ctrl+b to the pane (for a
+# nested multiplexer). tuios's own window-mode keys move under leader + ctrl+t.
+# Undo: `tuios keybinds preset tuios`, or delete this line. Your own bindings
+# below still win over the preset.
+[keybindings]
+preset = "tmux"
+
+[keybindings.prefix_mode]
+# Split, then re-run the focused pane's ssh in the new pane (clones the
+# connection). Same gesture as the plain split keys, plus opt: | -> opt+|.
+# opt+c opens the same ssh in a whole new window (tmux has c = new window).
+split_ssh_vertical   = ["opt+|"]
+split_ssh_horizontal = ["opt+-"]
+new_window_ssh       = ["opt+c"]
+
+# opt+ instead of alt+ (macOS convention) — overrides the tmux preset's
+# alt+arrow resize keys, which trigger keyboard warnings on load.
+resize_pane_left_5  = ["opt+left",  "ctrl+left",  "shift+left"]
+resize_pane_right_5 = ["opt+right", "ctrl+right", "shift+right"]
+resize_pane_up_5    = ["opt+up",    "ctrl+up",    "shift+up"]
+resize_pane_down_5  = ["opt+down",  "ctrl+down",  "shift+down"]
+
+# Pin pane focus to alt+arrows no matter what the preset does with
+# terminal-mode keys. Works because kitty's neighboring_window moved to
+# ctrl+alt+arrows; in a plain ssh+tmux tab the same keys reach tmux's
+# `bind -n M-arrows` again.
+[keybindings.terminal_mode]
+terminal_focus_left  = ["alt+left"]
+terminal_focus_right = ["alt+right"]
+terminal_focus_up    = ["alt+up"]
+terminal_focus_down  = ["alt+down"]
+
+# kitty-style ctrl+alt chords, added next to the stock keys so both work.
+# kitty's ctrl+alt pane-management maps are commented out in kitty.conf, so
+# these chords reach tuios. send_to_workspace moves to ctrl+alt+shift+N to
+# free ctrl+alt+N for switch_workspace (kitty goto_tab muscle memory).
+[keybindings.gui]
+split_vertical   = ["ctrl+shift+d", "ctrl+alt+|"]
+split_horizontal = ["ctrl+shift+e", "ctrl+alt+-"]
+close_window     = ["ctrl+shift+w", "ctrl+alt+w"]
+
+terminal_focus_left  = ["alt+left",  "ctrl+alt+left"]
+terminal_focus_right = ["alt+right", "ctrl+alt+right"]
+terminal_focus_up    = ["alt+up",    "ctrl+alt+up"]
+terminal_focus_down  = ["alt+down",  "ctrl+alt+down"]
+
+gui_resize_left  = ["opt+shift+left",  "ctrl+alt+shift+left"]
+gui_resize_right = ["opt+shift+right", "ctrl+alt+shift+right"]
+gui_resize_up    = ["opt+shift+up",    "ctrl+alt+shift+up"]
+gui_resize_down  = ["opt+shift+down",  "ctrl+alt+shift+down"]
+
+# swap_* lose ctrl+alt+shift+arrows to resize above; unbinding silences the
+# dead-key warnings. They stay reachable via layout prefix (ctrl+b ctrl+t L).
+swap_left  = []
+swap_right = []
+swap_up    = []
+swap_down  = []
+
+cycle_tiling_scheme = ["ctrl+alt+s"]
+
+switch_workspace_1 = ["alt+1", "ctrl+alt+1"]
+switch_workspace_2 = ["alt+2", "ctrl+alt+2"]
+switch_workspace_3 = ["alt+3", "ctrl+alt+3"]
+switch_workspace_4 = ["alt+4", "ctrl+alt+4"]
+switch_workspace_5 = ["alt+5", "ctrl+alt+5"]
+switch_workspace_6 = ["alt+6", "ctrl+alt+6"]
+switch_workspace_7 = ["alt+7", "ctrl+alt+7"]
+switch_workspace_8 = ["alt+8", "ctrl+alt+8"]
+switch_workspace_9 = ["alt+9", "ctrl+alt+9"]
+
+# send_to_workspace left unbound in this scope: ctrl+alt+shift+N is already
+# move_and_follow (send + follow, strictly better). Send still exists in
+# window mode at ctrl+opt+N.
+send_to_workspace_1 = []
+send_to_workspace_2 = []
+send_to_workspace_3 = []
+send_to_workspace_4 = []
+send_to_workspace_5 = []
+send_to_workspace_6 = []
+send_to_workspace_7 = []
+send_to_workspace_8 = []
+send_to_workspace_9 = []
+
+# ============================================================================
+# TUIOS-INTEGRATION END
+# ============================================================================
+
+[appearance.selection]
+copy_entry = "cursor"
+
+[dock]
+center = ["clock", "windows", "session"]
+right = ["session-controls", "transfers", "notifications", "copy-help", "cpu", "ram"]
+left = ["mode", "workspaces", "trail", "tape"]
+
+[dock.custom.branch]
+command  = "git branch --show-current"
+refresh  = "event:after-focus-change"
+on-click = "tuios new-window log -- git log --oneline -20"
+
+[notifications]
+duration = 0
+bell = "both"
+
+[notifications.agent]
+sound = true
+sound_mode = "audio"
+
+[scratch]
+width = "60%"
+height = "60%"

@@ -64,7 +64,7 @@ zinit wait lucid for \
   OMZP::extract
 
 if [[ -f /etc/arch-release ]];      then zinit ice wait lucid; zinit snippet OMZP::archlinux; fi
-if command -v aws     &>/dev/null;  then zinit ice wait lucid; zinit snippet OMZP::aws;       fi
+#if command -v aws     &>/dev/null;  then zinit ice wait lucid; zinit snippet OMZP::aws;       fi
 if command -v kubectl &>/dev/null;  then zinit ice wait lucid; zinit snippet OMZP::kubectl;   fi
 
 # ─── History ──────────────────────────────────────────────────────────────────
